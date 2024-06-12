@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fbfbfb;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  gap: 8rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navBar {
+  width: 100%;
+  height: 4.5rem;
+  background-color: #212121;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+}
+.navBar .logo-container {
+  background-color: #212121;
+}
+.navBar .logo-container svg {
+  background-color: #212121;
+  height: fit-content;
+  width: fit-content;
+}
+.navBar .menu-container {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+.navBar .menu-container .menu-list-container {
+  display: flex;
+  position: relative;
+  gap: 8rem;
+  list-style: none;
+  background-color: #212121;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.navBar .menu-container .menu-list-container .menu-item {
+  padding: 1.4rem;
+  background-color: #212121;
+  width: 8rem;
+}
+.navBar .menu-container .menu-list-container .menu-item a {
+  text-decoration: none;
+  background-color: #212121;
+  color: #fbfbfb;
+  display: flex;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.navBar .menu-container .menu-list-container .menu-item:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+}
+.navBar .menu-container .menu-list-container .menu-item .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 4.5rem;
+  width: 8rem;
+  gap: 0rem;
+  transform: translateX(-1.5rem);
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.navBar .menu-container .menu-list-container .menu-item .dropdown-menu li {
+  background-color: #212121;
+  color: #fbfbfb;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  list-style: none;
+}
+
+footer {
+  width: 100%;
+  height: fit-content;
+  background-color: #212121;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2rem;
+  gap: 2rem;
+}
+footer .footer-title {
+  width: 40rem;
+  height: fit-content;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+footer .footer-title h4 {
+  font-size: 2rem;
+  background: none;
+  color: #fbfbfb;
+}
+footer .footer-title svg {
+  position: relative;
+  top: 1px;
+  background: none;
+}
+footer .footer-info-container {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  background: none;
+}
+footer .footer-info-container .footer-datalist {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .footer-info-container .footer-datalist h4 {
+  color: #1591EA;
+  text-align: center;
+  background: none;
+}
+footer .footer-info-container .footer-datalist .footer-datalist-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  gap: 0.5rem;
+}
+footer .footer-info-container .footer-datalist .footer-datalist-items .datalist-item {
+  background: none;
+}
+footer .footer-info-container .footer-datalist .footer-datalist-items .datalist-item a {
+  background: none;
+  color: #fbfbfb;
+  text-decoration: none;
+  font-weight: 500;
+}
+footer .footer-contact {
+  width: 40rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: none;
+  border-top: 1px solid #3d3d3d;
+  padding-top: 2rem;
+}
+footer .footer-contact .svg-footer-container {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  gap: 1rem;
+  background: none;
+}
+footer .footer-contact .svg-footer-container svg {
+  color: #fbfbfb;
+  background: none;
+}
+footer .footer-contact .form-container {
+  height: fit-content;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer .footer-contact .form-container input {
+  width: 100%;
+  padding: 0.375rem;
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.5333333333);
+  border-radius: 0.2rem;
+}
+footer .footer-contact .form-container div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: none;
+}
+footer .footer-contact .form-container div input {
+  width: 1rem;
+}
+footer .footer-contact .form-container div label {
+  color: #fbfbfb;
+  background: none;
+}
+footer .footer-contact .form-container button {
+  width: 100%;
+  padding: 0.375rem;
+  outline: none;
+  border: 1px solid #1591EA;
+  color: #fbfbfb;
+  background-color: #1591EA;
+  border-radius: 0.2rem;
+}
+
+body {
+  /* linear-gradient(340deg, rgb(21, 145, 234) -47%, rgb(6, 6, 6) 93%) */
+  background: linear-gradient(340deg, rgb(21, 145, 234) -25%, rgb(6, 6, 6) 75%);
+}
+
+main {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+main .title-container {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+main .title-container h1 {
+  background: transparent;
+  color: #fbfbfb;
+  font-size: 5rem;
+  font-weight: 400;
+}
+main .title-container svg {
+  background: transparent;
+  animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+  10% {
+    transform: rotate(36deg);
+  }
+  20% {
+    transform: rotate(72deg);
+  }
+  30% {
+    transform: rotate(108deg);
+  }
+  40% {
+    transform: rotate(144deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(216deg);
+  }
+  70% {
+    transform: rotate(252deg);
+  }
+  80% {
+    transform: rotate(288deg);
+  }
+  90% {
+    transform: rotate(324deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+main .stepbystep-container {
+  width: 60rem;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+}
+main .stepbystep-container .step-container {
+  height: fit-content;
+  width: 25%;
+  background: transparent;
+}
+main .stepbystep-container .step-container .step-1 {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.375rem;
+  background-color: #1591EA;
+  width: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 53px;
+}
+main .stepbystep-container .step-container .step-1 h4 {
+  color: #fbfbfb;
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+main .stepbystep-container .step-container .step-2 {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.375rem;
+  background-color: #1591EA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 53px;
+}
+main .stepbystep-container .step-container .step-2 h4 {
+  color: #fbfbfb;
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+main .stepbystep-container .step-container .step-2 svg {
+  color: #fbfbfb;
+  background: transparent;
+}
+main .stepbystep-container .step-container .step-3 {
+  width: 100%;
+  background-color: #1591EA;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.375rem;
+}
+main .stepbystep-container .step-container .step-3 .step-3-item {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #fbfbfb;
+  background-color: #212121;
+}
+main .stepbystep-container .step-container .step-3 .step-3-item svg {
+  color: #fbfbfb;
+  background-color: transparent;
+}
+main .stepbystep-container .step-container .step-3 .step-3-item h4 {
+  background: transparent;
+  font-weight: 500;
+}
+main .stepbystep-container .svg-container {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  background: none;
+  align-items: center;
+}
+main .stepbystep-container .svg-container svg {
+  background: none;
+  color: #fbfbfb;
+}
+
+.line-divisor {
+  width: 60rem;
+  height: 1px;
+  color: #fbfbfb;
+}
+
+.info-section {
+  height: fit-content;
+  width: 60rem;
+  background: transparent;
+}
+.info-section .info-paragraph {
+  font-size: 1.2rem;
+  color: #fbfbfb;
+  background: none;
+}
+.info-section .info-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: none;
+  padding-left: 2rem;
+  padding-block: 2rem;
+}
+.info-section .info-items-container .info-items {
+  background: none;
+  display: flex;
+  align-items: center;
+}
+.info-section .info-items-container .info-items svg {
+  background: none;
+  color: #fbfbfb;
+}
+.info-section .info-items-container .info-items span {
+  background: none;
+  color: #fbfbfb;
+}
+
+/*# sourceMappingURL=style.css.map */

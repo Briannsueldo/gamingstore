@@ -1,0 +1,84 @@
+.navBar {
+    width: 100%;
+    height: 4.5rem;
+    background-color: #212121;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+
+    .logo-container {
+        background-color: #212121;
+
+        svg {
+            background-color: #212121;
+            height: fit-content;
+            width: fit-content;
+        }
+    }
+
+    .menu-container {
+        display: flex;
+        position: relative;
+        height: 100%;
+
+        .menu-list-container {
+            display: flex;
+            position: relative;
+            gap: 8rem;
+            list-style: none;
+            background-color: #212121;
+            font-size: 1rem;
+            font-weight: 500;
+
+            .menu-item {
+
+                padding: 1.4rem;
+                background-color: #212121;
+                width: 8rem;
+
+                a {
+                    text-decoration: none;
+                    background-color: #212121;
+                    color: #fbfbfb;
+                    display: flex;
+                    position: relative;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                &:hover .dropdown-menu {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .dropdown-menu {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 4.5rem;
+                    width: 8rem;
+                    gap: 0rem;
+                    transform: translateX(-1.5rem);
+                    align-items: center;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: 0.2s ease-in-out;
+                    
+                    li {
+                        background-color: #212121;
+                        color: #fbfbfb;
+                        padding: 1rem;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 1rem;
+                        list-style: none;
+                    }
+                }
+
+            }
+
+        }
+    }
+}

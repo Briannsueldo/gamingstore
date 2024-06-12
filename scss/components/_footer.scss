@@ -1,0 +1,139 @@
+
+footer {
+    width: 100%;
+    height: fit-content;
+    background-color: #212121;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 2rem;
+    gap: 2rem;
+
+    .footer-title {
+        width: 40rem;
+        height: fit-content;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        
+        h4 {
+            font-size: 2rem;
+            background: none;
+            color: #fbfbfb;
+        }
+
+        svg {
+            position: relative;
+            top: 1px;
+            background: none;
+        }
+    }
+
+    .footer-info-container {
+        width: 40rem;
+        display: flex;
+        justify-content: space-between;
+        background: none;
+
+        .footer-datalist {
+            background: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            h4 {
+                color: #1591EA;
+                text-align: center;
+                background: none;
+            }
+
+            .footer-datalist-items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: none;
+                gap: 0.5rem;
+
+                .datalist-item {
+                    background: none;
+                    
+                    a {
+                        background: none;
+                        color: #fbfbfb;
+                        text-decoration: none;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-contact {
+        width: 40rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: none;
+        border-top: 1px solid #3d3d3d;
+        padding-top: 2rem;
+
+        .svg-footer-container {
+            display: flex;
+            flex-direction: row;
+            height: fit-content;
+            gap: 1rem;
+            background: none;
+
+            svg {
+                color: #fbfbfb;
+                background: none;
+            }
+        }
+
+        .form-container {
+            height: fit-content;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            input {
+                width: 100%;
+                padding: 0.375rem;
+                outline: none;
+                border: 1px solid #21212188;
+                border-radius: 0.2rem;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                background: none;
+
+                input {
+                    width: 1rem;
+                }
+
+                label {
+                    color: #fbfbfb;
+                    background: none;
+                }
+            }
+
+            button {
+                width: 100%;
+                padding: 0.375rem;
+                outline: none;
+                border: 1px solid #1591EA;
+                color: #fbfbfb;
+                background-color: #1591EA;
+                border-radius: 0.2rem;
+            }
+        }
+    }
+}
