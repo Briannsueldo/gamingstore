@@ -1,6 +1,6 @@
 
 
-document.querySelector("form").addEventListener("submit", function(submit) {
+function firstFormSubmit(submit) {
     submit.preventDefault();
 
     let nameField = document.getElementById("firstName");
@@ -74,14 +74,24 @@ document.querySelector("form").addEventListener("submit", function(submit) {
     postSubtmitAction();
 
     
-});
+};
+
+document.querySelector("form").addEventListener("submit", firstFormSubmit);
 
 function postSubtmitAction() {
+    
+
     let registerContainer = document.querySelector(".register-main-container");
     let formContainer = document.querySelector(".form-register-container");
     let titleContainer = document.querySelector(".register-title-container");
     let titleMain = document.querySelector(".register-title-container h2");
     let realFormContainer = document.querySelector(".form");
+
+    realFormContainer.remove();
+
+    let secondFormContainer = document.createElement("form");
+    secondFormContainer.classList.add("secondForm");
+    formContainer.appendChild(secondFormContainer);
 
 
     titleContainer.classList.add("fadeIn");
@@ -118,7 +128,7 @@ function postSubtmitAction() {
 
             // Second register creation
             
-            realFormContainer.innerHTML = "";
+            /* realFormContainer.innerHTML = ""; */
         }, 3000);
 
         setTimeout(() => {
@@ -142,7 +152,7 @@ function postSubtmitAction() {
             nicknameInput.classList.add("form-prompt-input");
             nicknameContainer.appendChild(nicknameInput);
 
-            realFormContainer.appendChild(nicknameContainer);
+            secondFormContainer.appendChild(nicknameContainer);
 
             // Profile picture selection
 
@@ -157,17 +167,39 @@ function postSubtmitAction() {
             picSelectionContainer.classList.add("picSelectionContainer");
 
             let profileImages = [
-                "../images/profileIcons/profile_1.jpg",
+                /* "../images/profileIcons/profile_1.jpg",
                 "../images/profileIcons/profile_2.jpg",
                 "../images/profileIcons/profile_3.jpg",
-                "../images/profileIcons/profile_4.jpg",
-            ]
+                "../images/profileIcons/profile_4.jpg", */
+                {
+                    src: "../images/profileIcons/profile_1.jpg",
+                },
+                {
+                    src: "../images/profileIcons/profile_2.jpg",
+                },
+                {
+                    src: "../images/profileIcons/profile_3.jpg",
+                },
+                {
+                    src: "../images/profileIcons/profile_4.jpg",
+                },
+            ];
+
+            let imageSelected = null;
 
             for (let i = 0; i < 4; i++) {
                 let picContainer = document.createElement("img");
-                picContainer.src = profileImages[i];
+                picContainer.src = profileImages[i].src;
 
                 picSelectionContainer.appendChild(picContainer);
+
+                picContainer.addEventListener("click", function() {
+                    let allImages = picSelectionContainer.querySelectorAll("img");
+                    allImages.forEach(image => image.classList.remove("active"));
+
+                    picContainer.classList.toggle("active");
+                    imageSelected = profileImages[i].src;
+                });
             }
 
             
@@ -207,12 +239,12 @@ function postSubtmitAction() {
 
             profileSelectionContainer.style.gap = "1rem";
 
-            realFormContainer.appendChild(profileSelectionContainer);
+            secondFormContainer.appendChild(profileSelectionContainer);
 
 
 
 
-            document.querySelector("form").addEventListener("submit", function(submit) {
+            /* document.querySelector("form").addEventListener("submit", function(submit) {
                 submit.preventDefault();
 
                 if (!nicknameInput.value) {
@@ -220,6 +252,27 @@ function postSubtmitAction() {
                     submit.preventDefault();
                     return;
                 }
+            }) */
+
+            
+
+            secondFormContainer.addEventListener("submit", function(submit) {
+                if (!nicknameInput.value) {
+                    submit.preventDefault();
+                    alert("Chose a nickname");
+                    return;
+                }
+
+                if (!imageSelected) {
+                    submit.preventDefault();
+                    alert("Choose an profile picture");
+                    return;
+                }
+
+                let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+                userInfo[0].nickname = nicknameInput.value;
+                userInfo[0].userImage = imageSelected;
+                localStorage.setItem("userInfo", JSON.stringify(userInfo));
             })
 
         }, 5000);
