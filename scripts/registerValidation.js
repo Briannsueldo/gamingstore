@@ -1,4 +1,6 @@
-
+let titleMain = document.querySelector(".register-title-container h2");
+let formContainer = document.querySelector(".form-register-container");
+let mainContainer = document.querySelector(".register-main-container");
 
 function firstFormSubmit(submit) {
     submit.preventDefault();
@@ -257,6 +259,8 @@ function postSubtmitAction() {
             
 
             secondFormContainer.addEventListener("submit", function(submit) {
+                submit.preventDefault();
+                
                 if (!nicknameInput.value) {
                     submit.preventDefault();
                     alert("Chose a nickname");
@@ -273,6 +277,8 @@ function postSubtmitAction() {
                 userInfo[0].nickname = nicknameInput.value;
                 userInfo[0].userImage = imageSelected;
                 localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+                profileUpdate();
             })
 
         }, 5000);
@@ -282,6 +288,55 @@ function postSubtmitAction() {
             formContainer.classList.add("fadeOut");
         }, 6000);
     }
+};
+
+function profileUpdate () {
+    let profileContainer = document.getElementById("profile-container");
+    let profileImage = document.getElementById("profile-image");
+    let profileNickname = document.getElementById("profile-nickname");
+
+
+    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    
+    let userNick = userInfo[0].nickname;
+    let userImg = userInfo[0].userImage;
+
+    profileImage.src = userImg;
+    profileNickname.textContent = userNick;
+
+    profileContainer.style.display = "flex";
+
+    // Welcome text
+    let formContainer = document.querySelector(".form-register-container");
+
+    setTimeout(() => {
+        formContainer.classList.add("fadeIn");
+    }, 200);
+
+    setTimeout(() => {
+        formContainer.remove();
+    }, 200);
+
+    setTimeout(() => {
+        formContainer.classList.add("fadeIn");
+        titleMain.classList.add("fadeIn");
+    }, 1000);
+    
+    setTimeout(() => {
+        titleMain.textContent = "WELCOME TO MOISTURE! NOW YOU CAN ENJOY OUR SERVICES!"
+        titleMain.classList.remove("fadeIn");
+        titleMain.classList.add("fadeOut");
+    }, 2000);
+
+    setTimeout(() => {    
+        let continueButton = document.createElement("button");
+        continueButton.textContent = "WATCH THE STORE";
+        mainContainer.appendChild(continueButton);
+
+
+        continueButton.classList.add("fadeOut");
+        continueButton.classList.add("continueButton");
+    }, 3000);
 };
 
 

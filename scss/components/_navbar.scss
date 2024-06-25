@@ -81,4 +81,39 @@
 
         }
     }
+
+    .profile-menu-container {
+        width: fit-content;
+        height: fit-content;
+        background: transparent;
+        
+
+        #profile-container {
+            height: 3.5rem;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            padding: .5rem;
+            gap: .5rem;
+            background-color: #32353c;
+            border-radius: .2rem;
+            display: none;
+
+            .profile-img {
+                height: 2.5rem;
+            }
+
+            .profile-nick {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: #fbfbfb;
+                background: transparent;
+            }
+
+            #profileMenuArrow {
+                background: transparent;
+                color: #fbfbfb;
+            }
+        }
+    }
 }

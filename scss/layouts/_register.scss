@@ -220,7 +220,7 @@
     .svgContainer {
         background: none;
         position: relative;
-        top: -50vh;
+        
 
         svg {
             background: none;
@@ -258,5 +258,20 @@
     }
 }
 
+.continueButton {
+    padding: calc(.5rem + 1px);
+    border: none;
+    color: #fbfbfb;
+    border-radius: .2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: $darker-blue;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $main-blue;
+    }
+}
 
 

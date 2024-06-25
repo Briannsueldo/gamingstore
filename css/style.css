@@ -90,6 +90,35 @@ body {
   font-size: 1rem;
   list-style: none;
 }
+.navBar .profile-menu-container {
+  width: fit-content;
+  height: fit-content;
+  background: transparent;
+}
+.navBar .profile-menu-container #profile-container {
+  height: 3.5rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  background-color: #32353c;
+  border-radius: 0.2rem;
+  display: none;
+}
+.navBar .profile-menu-container #profile-container .profile-img {
+  height: 2.5rem;
+}
+.navBar .profile-menu-container #profile-container .profile-nick {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fbfbfb;
+  background: transparent;
+}
+.navBar .profile-menu-container #profile-container #profileMenuArrow {
+  background: transparent;
+  color: #fbfbfb;
+}
 
 footer {
   width: 100%;
@@ -587,7 +616,6 @@ body {
 .register-main-container .svgContainer {
   background: none;
   position: relative;
-  top: -50vh;
 }
 .register-main-container .svgContainer svg {
   background: none;
@@ -620,6 +648,20 @@ body {
     visibility: visible;
     opacity: 1;
   }
+}
+.continueButton {
+  padding: calc(0.5rem + 1px);
+  border: none;
+  color: #fbfbfb;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: #0C5284;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.continueButton:hover {
+  background-color: #1591EA;
 }
 
 /*# sourceMappingURL=style.css.map */
