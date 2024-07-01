@@ -1,5 +1,8 @@
+
+import { profileUpdate } from './profileUpdate.js';
+
 let titleMain = document.querySelector(".register-title-container h2");
-let formContainer = document.querySelector(".form-register-container");
+/* let formContainer = document.querySelector(".form-register-container"); */
 let mainContainer = document.querySelector(".register-main-container");
 
 function firstFormSubmit(submit) {
@@ -126,11 +129,6 @@ function postSubtmitAction() {
             titleContainer.classList.remove("fadeIn");
             titleContainer.classList.add("fadeOut");
             titleMain.textContent = "We almost done";
-
-
-            // Second register creation
-            
-            /* realFormContainer.innerHTML = ""; */
         }, 3000);
 
         setTimeout(() => {
@@ -169,10 +167,6 @@ function postSubtmitAction() {
             picSelectionContainer.classList.add("picSelectionContainer");
 
             let profileImages = [
-                /* "../images/profileIcons/profile_1.jpg",
-                "../images/profileIcons/profile_2.jpg",
-                "../images/profileIcons/profile_3.jpg",
-                "../images/profileIcons/profile_4.jpg", */
                 {
                     src: "../images/profileIcons/profile_1.jpg",
                 },
@@ -243,21 +237,6 @@ function postSubtmitAction() {
 
             secondFormContainer.appendChild(profileSelectionContainer);
 
-
-
-
-            /* document.querySelector("form").addEventListener("submit", function(submit) {
-                submit.preventDefault();
-
-                if (!nicknameInput.value) {
-                    alert("nickname required");
-                    submit.preventDefault();
-                    return;
-                }
-            }) */
-
-            
-
             secondFormContainer.addEventListener("submit", function(submit) {
                 submit.preventDefault();
                 
@@ -279,6 +258,8 @@ function postSubtmitAction() {
                 localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
                 profileUpdate();
+
+                welcomeText();
             })
 
         }, 5000);
@@ -290,7 +271,7 @@ function postSubtmitAction() {
     }
 };
 
-function profileUpdate () {
+/* function profileUpdate () {
     let profileContainer = document.getElementById("profile-container");
     let profileImage = document.getElementById("profile-image");
     let profileNickname = document.getElementById("profile-nickname");
@@ -305,7 +286,9 @@ function profileUpdate () {
     profileNickname.textContent = userNick;
 
     profileContainer.style.display = "flex";
+}; */
 
+function welcomeText() {
     // Welcome text
     let formContainer = document.querySelector(".form-register-container");
 
@@ -332,12 +315,12 @@ function profileUpdate () {
         let continueButton = document.createElement("button");
         continueButton.textContent = "WATCH THE STORE";
         mainContainer.appendChild(continueButton);
-
+    
 
         continueButton.classList.add("fadeOut");
         continueButton.classList.add("continueButton");
     }, 3000);
-};
+}
 
 
 

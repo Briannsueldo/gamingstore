@@ -16,7 +16,7 @@
         <div class="menu-container">
             <ul class="menu-list-container">
                 <li class="menu-item">
-                    <a href="./store.html">STORE</a>
+                    <a href="">STORE</a>
                     <ul class="dropdown-menu">
                         <li>Discover</li>
                         <li>Wishlist</li>
@@ -50,72 +50,67 @@
         </div>
     </nav>
 
-    <main class="register-main-container">
-        <div class="register-title-container">
-            <h2>Create an account and enjoy thousands of games</h2>
+    <main class="store-main-container">
+        <section class="info-bar">
+            <div class="info-bar-money">
+                <a id="walletAmount">$35</a>
+            </div>
+            <div class="info-bar-nav">
+                <a href="">News</a>
+                <a href="">Discover</a>
+                <a href="">Points</a>
+                <a href="">Community</a>
+            </div>
+            <div class="info-bar-wishlist">
+                <a href="">Wishlist</a>
+            </div>
+        </section>
+
+        <div class="banner-container">
+            <img src="../images/store/banner.jpg" alt="" class="banner-img">
         </div>
-        <div class="form-register-container">
-            <form action="" class="form">
-                <div class="form-prompt name-input">
-                    <div>
-                        <label for="" class="form-prompt-label">FIRST NAME</label>
-                        <input type="text" id="firstName" class="form-prompt-input">
-                    </div>
-                    <div>
-                        <label for="" class="form-prompt-label">LAST NAME</label>
-                        <input type="text" id="lastName" class="form-prompt-input">
-                    </div>
+
+        <section class="store-info-container">
+            <div class="store-column-categories">
+                <ul class="categories-container">
+                    <li class="category-selector"><a href="">Action</a></li>
+                    <li class="category-selector"><a href="">Arcade</a></li>
+                    <li class="category-selector"><a href="">Adventure</a></li>
+                    <li class="category-selector"><a href="">Co-op</a></li>
+                    <li class="category-selector"><a href="">FPS</a></li>
+                    <li class="category-selector"><a href="">Free to play</a></li>
+                    <li class="category-selector"><a href="">Fighting</a></li>
+                    <li class="category-selector"><a href="">Horror</a></li>
+                    <li class="category-selector"><a href="">Multiplayer</a></li>
+                    <li class="category-selector"><a href="">Open world</a></li>
+                    <li class="category-selector"><a href="">Puzzle</a></li>
+                    <li class="category-selector"><a href="">Racing</a></li>
+                    <li class="category-selector"><a href="">RTS</a></li>
+                    <li class="category-selector"><a href="">Role play</a></li>
+                    <li class="category-selector"><a href="">Simulation</a></li>
+                    <li class="category-selector"><a href="">Single player</a></li>
+                    <li class="category-selector"><a href="">Sandbox</a></li>
+                    <li class="category-selector"><a href="">Sports</a></li>
+                    <li class="category-selector"><a href="">VR</a></li>
+                </ul>
+            </div>
+            <div class="store-column-search">
+                <div class="search-container">
+                    <input type="text" id="search-game-input">
+                    <button id="search-game-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </button>
                 </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">COUNTRY</label>
-                    <div class="country-selector">
-                        <span>-</span>
-                    </div>
-                    <div class="country-selector-dropdown">
-                        <div class="country-selector-option">
-                            <img src="../images/countrys/arg-flag.png" alt="">
-                            <span>Argentina</span>
-                        </div>
-                        <div class="country-selector-option">
-                            <img src="../images/countrys/br-flag.png" alt="">
-                            <span>Brazil</span>
-                        </div>
-                        <div class="country-selector-option">
-                            <img src="../images/countrys/ch-flag.png" alt="">
-                            <span>Chile</span>
-                        </div>
-                        <div class="country-selector-option">
-                            <img src="../images/countrys/eu-flag.png" alt="">
-                            <span>European Union</span>
-                        </div>
-                        <div class="country-selector-option">
-                            <img src="../images/countrys/ur-flag.png" alt="">
-                            <span>Uruguay</span>
-                        </div>
-                        <div class="country-selector-option">
-                            <img src="../images/countrys/usa-flag.png" alt="">
-                            <span>United States</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">EMAIL ADDRESS</label>
-                    <input type="email" id="email" class="form-prompt-input">
-                </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">PASSWORD</label>
-                    <input type="password" id="password" class="form-prompt-input">
-                </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">REPEAT PASSWORD</label>
-                    <input type="password" id="repeatPassword" class="form-prompt-input">
-                </div>
-                <div class="form-checkbox">
-                    <input type="checkbox" name="" id="terms"><span>Accept <a href="">terms and conditions</a></span>
-                </div>
-                <button type="submit" class="submitButton">SUBMIT</button>
-            </form>
-        </div>
+                <section class="">
+
+                </section>
+            </div>
+            <div class="store-column-data">
+
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -173,8 +168,7 @@
         </div>
     </footer>
 
-    <script src="../scripts/profileUpdate.js"></script>
-    <script src="../scripts/countrySelector.js"></script>
-    <script type="module" src="../scripts/registerValidation.js"></script>
+    <script type="module" src="../scripts/store.js"></script>
+    <script src="../scripts/api/steamApi.js"></script>
 </body>
 </html>

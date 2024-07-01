@@ -13,7 +13,7 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  gap: 8rem;
+  /* gap: 8rem; */
   flex-direction: column;
   align-items: center;
 }
@@ -662,6 +662,156 @@ body {
 }
 .continueButton:hover {
   background-color: #1591EA;
+}
+
+.store-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #3d3d3d;
+  padding-block: 2.5rem;
+  gap: 0.5rem;
+}
+.store-main-container .info-bar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 3rem;
+  width: 80%;
+  left: 10%;
+  background-color: transparent;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.store-main-container .info-bar .info-bar-money {
+  height: 100%;
+  width: 20%;
+  background-color: #3F9A59;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.store-main-container .info-bar .info-bar-money a {
+  background-color: transparent;
+  color: #fbfbfb;
+}
+.store-main-container .info-bar .info-bar-nav {
+  height: 100%;
+  width: 60%;
+  background: linear-gradient(to right, #1591EA, #0C5284);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.store-main-container .info-bar .info-bar-nav a {
+  background-color: transparent;
+  text-decoration: none;
+  color: #fbfbfb;
+}
+.store-main-container .info-bar .info-bar-wishlist {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(to right, #3F9A59, #15341E);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.store-main-container .info-bar .info-bar-wishlist a {
+  background-color: transparent;
+  text-decoration: none;
+  color: #fbfbfb;
+}
+.store-main-container .banner-container {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  object-fit: content;
+  height: fit-content;
+}
+.store-main-container .banner-container .banner-img {
+  width: 100%;
+  display: flex;
+}
+.store-main-container .store-info-container {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  width: 80%;
+  left: 10%;
+  background-color: transparent;
+  gap: 0.5rem;
+}
+.store-main-container .store-info-container .store-column-categories {
+  width: 20%;
+  height: fit-content;
+  background-color: #212121;
+}
+.store-main-container .store-info-container .store-column-categories .categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  align-items: start;
+}
+.store-main-container .store-info-container .store-column-categories .categories-container .category-selector {
+  list-style: none;
+  background-color: transparent;
+}
+.store-main-container .store-info-container .store-column-categories .categories-container .category-selector a {
+  text-decoration: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: #fbfbfb;
+  font-weight: 400;
+}
+.store-main-container .store-info-container .store-column-search {
+  display: flex;
+  width: 60%;
+  height: fit-content;
+  background-color: transparent;
+}
+.store-main-container .store-info-container .store-column-search .search-container {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  justify-content: end;
+  background-color: transparent;
+}
+.store-main-container .store-info-container .store-column-search .search-container #search-game-input {
+  width: 10rem;
+  border: 1px solid #fbfbfb;
+  border-radius: 0.5rem 0 0 0.5rem;
+  outline: none;
+  padding: 0.5rem;
+  background: linear-gradient(to right, #1591EA, #0C5284);
+}
+.store-main-container .store-info-container .store-column-search .search-container #search-game-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fbfbfb;
+  border-left: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  width: 2.5rem;
+  cursor: pointer;
+  background-color: #0C5284;
+}
+.store-main-container .store-info-container .store-column-search .search-container #search-game-button svg {
+  background-color: #0C5284;
+  fill: #fbfbfb;
+}
+.store-main-container .store-info-container .store-column-data {
+  display: flex;
+  width: 20%;
+  height: 500px;
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
