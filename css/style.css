@@ -749,63 +749,184 @@ body {
 .store-main-container .store-info-container .store-column-categories {
   width: 20%;
   height: fit-content;
-  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #3d3d3d;
 }
 .store-main-container .store-info-container .store-column-categories .categories-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
   gap: 0.5rem;
   padding: 0.5rem;
   align-items: start;
+  background-color: rgba(33, 33, 33, 0.3647058824);
 }
 .store-main-container .store-info-container .store-column-categories .categories-container .category-selector {
   list-style: none;
-  background-color: transparent;
+  width: 100%;
+  background-color: #212121;
+  padding: 0.2rem;
 }
 .store-main-container .store-info-container .store-column-categories .categories-container .category-selector a {
+  display: flex;
   text-decoration: none;
   background-color: transparent;
   text-decoration: none;
   color: #fbfbfb;
   font-weight: 400;
+  width: 100%;
 }
-.store-main-container .store-info-container .store-column-search {
-  display: flex;
-  width: 60%;
-  height: fit-content;
-  background-color: transparent;
-}
-.store-main-container .store-info-container .store-column-search .search-container {
+.store-main-container .store-info-container .store-column-categories .search-container {
   display: flex;
   height: 2.5rem;
   width: 100%;
   justify-content: end;
-  background-color: transparent;
+  background-color: #3d3d3d;
 }
-.store-main-container .store-info-container .store-column-search .search-container #search-game-input {
-  width: 10rem;
+.store-main-container .store-info-container .store-column-categories .search-container #search-game-input {
+  width: 80%;
   border: 1px solid #fbfbfb;
   border-radius: 0.5rem 0 0 0.5rem;
   outline: none;
   padding: 0.5rem;
   background: linear-gradient(to right, #1591EA, #0C5284);
 }
-.store-main-container .store-info-container .store-column-search .search-container #search-game-button {
+.store-main-container .store-info-container .store-column-categories .search-container #search-game-button {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #fbfbfb;
   border-left: none;
   border-radius: 0 0.5rem 0.5rem 0;
-  width: 2.5rem;
+  width: 20%;
   cursor: pointer;
   background-color: #0C5284;
 }
-.store-main-container .store-info-container .store-column-search .search-container #search-game-button svg {
+.store-main-container .store-info-container .store-column-categories .search-container #search-game-button svg {
   background-color: #0C5284;
   fill: #fbfbfb;
+}
+.store-main-container .store-info-container .store-column-search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 60%;
+  height: fit-content;
+  background-color: transparent;
+}
+.store-main-container .store-info-container .store-column-search .games-container {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard {
+  display: flex;
+  background-color: transparent;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardLeft {
+  width: 50%;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardLeft .gameHorizontalImage {
+  width: 100%;
+  height: 100%;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight {
+  width: 50%;
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .titleContainer {
+  text-align: center;
+  background: transparent;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .titleContainer .gameName {
+  background: transparent;
+  color: #fbfbfb;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer {
+  display: flex;
+  background-color: transparent;
+  align-items: end;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 50%;
+  background-color: transparent;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .gameOriginalPriceContainer {
+  background-color: transparent;
+  color: rgba(245, 245, 245, 0.6352941176);
+  text-decoration: line-through;
+  width: fit-content;
+  padding-left: 1.2rem;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer {
+  display: flex;
+  gap: 0.5rem;
+  background-color: transparent;
+  align-items: center;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer .gamePrice {
+  text-align: center;
+  justify-content: center;
+  width: 40%;
+  background-color: #212121;
+  color: #BEEE11;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer .discountAmount {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+  background: linear-gradient(to right, #0074E4, #00407E);
+  color: #fbfbfb;
+  font-weight: 500;
+  padding: 0.3rem 0.5rem;
+  height: fit-content;
+  width: fit-content;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsContainer button {
+  width: 50%;
+  height: 2rem;
+  border-radius: 0.2rem;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsContainer .cartButton {
+  border: 1px solid #3F9A59;
+  background-color: #3F9A59;
+  color: #fbfbfb;
+  font-weight: 500;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsContainer .addLibraryButton {
+  border: 1px solid #3F9A59;
+  background-color: #3F9A59;
+  color: #fbfbfb;
+  font-weight: 500;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsContainer .wishlistButton {
+  border: 1px solid rgba(245, 245, 245, 0.6352941176);
+  background: transparent;
+  color: rgba(245, 245, 245, 0.6352941176);
+  font-weight: 500;
 }
 .store-main-container .store-info-container .store-column-data {
   display: flex;

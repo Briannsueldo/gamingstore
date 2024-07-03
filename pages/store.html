@@ -72,7 +72,16 @@
 
         <section class="store-info-container">
             <div class="store-column-categories">
+                <div class="search-container">
+                    <input type="text" id="search-game-input">
+                    <button id="search-game-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </button>
+                </div>
                 <ul class="categories-container">
+                    <li class="category-selector"><a href="">All</a></li>
                     <li class="category-selector"><a href="">Action</a></li>
                     <li class="category-selector"><a href="">Arcade</a></li>
                     <li class="category-selector"><a href="">Adventure</a></li>
@@ -86,24 +95,26 @@
                     <li class="category-selector"><a href="">Puzzle</a></li>
                     <li class="category-selector"><a href="">Racing</a></li>
                     <li class="category-selector"><a href="">RTS</a></li>
-                    <li class="category-selector"><a href="">Role play</a></li>
+                    <li class="category-selector"><a href="">Roleplay</a></li>
                     <li class="category-selector"><a href="">Simulation</a></li>
-                    <li class="category-selector"><a href="">Single player</a></li>
+                    <li class="category-selector"><a href="">Singleplayer</a></li>
                     <li class="category-selector"><a href="">Sandbox</a></li>
+                    <li class="category-selector"><a href="">Software</a></li>
                     <li class="category-selector"><a href="">Sports</a></li>
+                    <li class="category-selector"><a href="">Turns</a></li>
                     <li class="category-selector"><a href="">VR</a></li>
                 </ul>
             </div>
             <div class="store-column-search">
-                <div class="search-container">
+                <!-- <div class="search-container">
                     <input type="text" id="search-game-input">
                     <button id="search-game-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                         </svg>
                     </button>
-                </div>
-                <section class="">
+                </div> -->
+                <section class="games-container">
 
                 </section>
             </div>
@@ -169,6 +180,5 @@
     </footer>
 
     <script type="module" src="../scripts/store.js"></script>
-    <script src="../scripts/api/steamApi.js"></script>
 </body>
 </html>
