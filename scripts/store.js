@@ -40,9 +40,17 @@ for (let games = 0; games < steamGamesInfo.length; games++) {
     priceContainer.classList.add('priceContainer');
     infoContainer.appendChild(priceContainer);
 
+    let buttonsAlertsContainer = document.createElement('div');
+    buttonsAlertsContainer.classList.add('buttonsAlertsContainer');
+    infoContainer.appendChild(buttonsAlertsContainer);
+
+    let addAnimationContainer = document.createElement('div');
+    addAnimationContainer.classList.add('addAnimationContainer');
+    buttonsAlertsContainer.appendChild(addAnimationContainer);
+
     let buttonsContainer = document.createElement('div');
     buttonsContainer.classList.add('buttonsContainer');
-    infoContainer.appendChild(buttonsContainer);
+    buttonsAlertsContainer.appendChild(buttonsContainer);
 
     horizontalCardRight.appendChild(titleContainer);
     horizontalCardRight.appendChild(infoContainer);
@@ -111,13 +119,10 @@ for (let games = 0; games < steamGamesInfo.length; games++) {
 
     let wishlistButton = document.createElement('button');
     wishlistButton.classList.add('wishlistButton');
-    wishlistButton.textContent = 'Wishlist'
+    wishlistButton.textContent = 'Wishlist';
+    wishlistButton.dataset.index = games;
 
     buttonsContainer.appendChild(wishlistButton);
-
-    // 
-
-    //
 
     gamesContainer.appendChild(gameHorizontalCard);
 
@@ -125,15 +130,49 @@ for (let games = 0; games < steamGamesInfo.length; games++) {
 
 let addToWishlist = function () {
     let wishlistButton = document.querySelectorAll('.wishlistButton');
+    let wishlistContainer = document.querySelector('.wishlist-counter');
+    let wishlistCounter = 0;
 
     wishlistButton.forEach(button => {
+        let index = button.dataset.index;
+        let game = steamGamesInfo[index];
+
         button.addEventListener('click', () => {
+
+            let parentContainer = button.parentElement.parentElement;
+
+            let addAnimationContainer = parentContainer.querySelector('.addAnimationContainer');
+
             button.classList.toggle('clicked');
         
             if(button.classList.contains('clicked')) {
                 button.textContent = 'Remove';
+                game.wishlisted = true;
+
+                wishlistCounter++;
+                wishlistContainer.textContent = wishlistCounter;
+
+                addAnimationContainer.textContent = 'Added successfully'
+                addAnimationContainer.classList.add('fadeOut');
+                setTimeout(() => {
+                    addAnimationContainer.classList.remove('fadeOut');
+                    addAnimationContainer.classList.add('fadeIn');
+                }, 2000);
+
+
             } else {
                 button.textContent = 'Wishlist'
+                game.wishlisted = false;
+
+                wishlistCounter--;
+                wishlistContainer.textContent = wishlistCounter;
+
+                addAnimationContainer.textContent = 'Remove successfully'
+                addAnimationContainer.classList.add('fadeOut');
+                setTimeout(() => {
+                    addAnimationContainer.classList.remove('fadeOut');
+                    addAnimationContainer.classList.add('fadeIn');
+                }, 2000);
             }
         });
     });
@@ -167,12 +206,24 @@ let categorySelector = document.querySelectorAll('.category-selector');
 let filterByCategory = function () {
     categorySelector.forEach(button => {
         button.addEventListener('click', (event) => {
+
+            categorySelector.forEach(button => button.classList.remove('category-selected'));
+
             event.preventDefault();
             let categoryText = button.textContent.toLowerCase();
             filterGamesByCategory(categoryText);
-        })
-    })
-}
+
+            button.classList.add('category-selected');
+
+            if(button.textContent.toLowerCase() === 'all') {
+                setTimeout(() => {
+                    button.classList.add('category-selected');
+                    button.classList.remove('category-selected');
+                }, 2000);
+            }
+        });
+    });
+};
 
 let filterGamesByCategory = function (categoryClicked) {
     let categorySelected = categoryClicked.toLowerCase();
@@ -180,10 +231,12 @@ let filterGamesByCategory = function (categoryClicked) {
     gameCards.forEach((gameCard, index) => {
         let gameCategories = steamGamesInfo[index].categories.map(category => category.toLowerCase());
 
-        if (gameCategories.includes(categorySelected)) {
+        if (categorySelected === 'all') {
+            gameCard.style.display = 'flex';
+        } else if (gameCategories.includes(categorySelected)) {
             gameCard.style.display = 'flex';
         } else {
-            gameCard.style.display = 'none'
+            gameCard.style.display = 'none';
         };
     });
 };

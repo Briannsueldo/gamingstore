@@ -59,11 +59,17 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            gap: 0.5rem;
             
             a {
                 background-color: transparent;
                 text-decoration: none;
                 color: $main-white;
+            }
+
+            .wishlist-counter {
+                background-color: transparent;
+                color: $main-gray;
             }
         }
     }
@@ -112,6 +118,12 @@
                     width: 100%;
                     background-color: $main-dark;
                     padding: 0.2rem;
+                    transition: 0.2s ease-in-out;
+
+                    /* &:hover {
+                        scale: 1.08;
+                        background: linear-gradient(to right, $main-blue, $darker-blue);
+                    } */
 
                     a {
                         display: flex;
@@ -134,26 +146,30 @@
 
                 #search-game-input {
                     width: 80%;
-                    border: 1px solid $main-white;
-                    border-radius: 0.5rem 0 0 0.5rem;
+                    border: 1px solid $main-dark;
+                    border-radius: 0.1rem 0 0 0.1rem;
                     outline: none;
                     padding: 0.5rem;
-                    background: linear-gradient(to right, #1591EA, #0C5284);
+                    background: $second-gray;
+                    box-shadow: inset 0px 0px 5px 2px $main-dark;
+                    color: $main-white;
+                    font-size: 1.2rem;
                 }
 
                 #search-game-button {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border: 1px solid $main-white;
+                    border: 1px solid $main-dark;
                     border-left: none;
-                    border-radius: 0 0.5rem 0.5rem 0;
+                    border-radius: 0 0.1rem 0.1rem 0;
                     width: 20%;
                     cursor: pointer;
-                    background-color: #0C5284;
+                    background-color: $second-gray;
+
 
                     svg {
-                        background-color: #0C5284;
+                        background-color: $second-gray;
                         fill: $main-white;
                     }
                 }
@@ -259,40 +275,64 @@
                                 }
                             }
 
-                            .buttonsContainer {
+                            .buttonsAlertsContainer {
                                 width: 50%;
+                                background-color: transparent;
+                                height: 4.5rem;
                                 display: flex;
-                                justify-content: center;
+                                flex-direction: column;
                                 gap: 0.5rem;
-                                background: transparent;
 
-                                button {
-                                    width: 50%;
+                                .addAnimationContainer {
+                                    width: 100%;
                                     height: 2rem;
-                                    border-radius: .2rem;
-                                }
-
-                                .cartButton {
-                                    border: 1px solid #3F9A59;
-                                    background-color: #3F9A59;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
                                     color: $main-white;
-                                    font-weight: 500;
+                                    background: linear-gradient(to right, #0074E4, #00407E);
+                                    border-radius: 0.2rem;
+                                    opacity: 0;
+                                    visibility: hidden;
                                 }
 
-                                .addLibraryButton {
-                                    border: 1px solid #3F9A59;
-                                    background-color: #3F9A59;
-                                    color: $main-white;
-                                    font-weight: 500;
-                                }
-
-                                .wishlistButton {
-                                    border: 1px solid $main-gray;
+                                .buttonsContainer {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: 0.5rem;
                                     background: transparent;
-                                    color: $main-gray;
-                                    font-weight: 500;
+    
+                                    button {
+                                        width: 50%;
+                                        height: 2rem;
+                                        border-radius: .2rem;
+                                    }
+    
+                                    .cartButton {
+                                        border: 1px solid #3F9A59;
+                                        background-color: #3F9A59;
+                                        color: $main-white;
+                                        font-weight: 500;
+                                    }
+    
+                                    .addLibraryButton {
+                                        border: 1px solid #3F9A59;
+                                        background-color: #3F9A59;
+                                        color: $main-white;
+                                        font-weight: 500;
+                                    }
+    
+                                    .wishlistButton {
+                                        border: 1px solid $main-gray;
+                                        background: transparent;
+                                        color: $main-gray;
+                                        font-weight: 500;
+                                    }
                                 }
                             }
+
+
                         }
                     }
                 }
@@ -306,5 +346,39 @@
             background-color: red;
         }
     }
+}
 
+.fadeIn {
+    animation: fadeIn 1s forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.category-selected {
+    scale: 1.07;
+    background: linear-gradient(to right, $main-blue, $darker-blue);
 }

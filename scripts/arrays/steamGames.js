@@ -14,6 +14,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Valve',
         discountStatus: {
             discount_active: false,
@@ -38,6 +39,7 @@ let steamGamesInfo = [
             'Roleplay',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Larian Studios',
         discountStatus: {
             discount_active: true,
@@ -63,6 +65,7 @@ let steamGamesInfo = [
             'Open world',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'FromSoftware Inc.',
         discountStatus: {
             discount_active: true,
@@ -86,6 +89,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Valve',
         discountStatus: {
             discount_active: false,
@@ -108,6 +112,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'KRAFTON, Inc.',
         discountStatus: {
             discount_active: false,
@@ -130,6 +135,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Respawn',
         discountStatus: {
             discount_active: false,
@@ -153,6 +159,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Rockstar North',
         discountStatus: {
             discount_active: true,
@@ -177,6 +184,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Facepunch Studios',
         discountStatus: {
             discount_active: true,
@@ -200,6 +208,7 @@ let steamGamesInfo = [
             'Singleplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'ConcernedApe',
         discountStatus: {
             discount_active: true,
@@ -223,6 +232,7 @@ let steamGamesInfo = [
             'Simulation',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Gaijin Entertainment',
         discountStatus: {
             discount_active: false,
@@ -245,6 +255,7 @@ let steamGamesInfo = [
             'Open world',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Pocketpair',
         discountStatus: {
             discount_active: true,
@@ -270,6 +281,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'The Fun Pimps',
         discountStatus: {
             discount_active: false,
@@ -292,6 +304,7 @@ let steamGamesInfo = [
             'Turns',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Firaxis Games',
         discountStatus: {
             discount_active: true,
@@ -312,6 +325,7 @@ let steamGamesInfo = [
             'Software',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Wallpaper Engine Team',
         discountStatus: {
             discount_active: false,
@@ -335,6 +349,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Behaviour Interactive Inc.',
         discountStatus: {
             discount_active: true,
@@ -359,6 +374,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Bohemia Interactive',
         discountStatus: {
             discount_active: true,
@@ -382,6 +398,7 @@ let steamGamesInfo = [
             'Singleplayer',
         ],
         achievements: false,
+        wishlisted: false,
         developer: 'Electronic Arts',
         discountStatus: {
             discount_active: false,
@@ -406,6 +423,7 @@ let steamGamesInfo = [
             'Puzzle',
         ],
         achievements: false,
+        wishlisted: false,
         developer: 'IRONMACE',
         discountStatus: {
             discount_active: false,
@@ -429,6 +447,7 @@ let steamGamesInfo = [
             'Singleplayer',
         ],
         achievements: false,
+        wishlisted: false,
         developer: 'SCS Software',
         discountStatus: {
             discount_active: true,
@@ -452,6 +471,7 @@ let steamGamesInfo = [
             'Turns',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Paradox Development Studio',
         discountStatus: {
             discount_active: true,
@@ -474,6 +494,7 @@ let steamGamesInfo = [
             'Singleplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Bethesda Game Studios',
         discountStatus: {
             discount_active: true,
@@ -496,6 +517,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Arrowhead Game Studios',
         discountStatus: {
             discount_active: false,
@@ -521,6 +543,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: false,
+        wishlisted: false,
         developer: 'Iron Gate AB',
         discountStatus: {
             discount_active: true,
@@ -546,6 +569,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Re-Logic',
         discountStatus: {
             discount_active: true,
@@ -574,6 +598,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: false,
+        wishlisted: false,
         developer: 'The Indie Stone',
         discountStatus: {
             discount_active: true,
@@ -596,6 +621,7 @@ let steamGamesInfo = [
             'Sandbox',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Facepunch Studios',
         discountStatus: {
             discount_active: true,
@@ -619,6 +645,7 @@ let steamGamesInfo = [
             'VR',
         ],
         achievements: false,
+        wishlisted: false,
         developer: 'VRChat Inc.',
         discountStatus: {
             discount_active: false,
@@ -643,6 +670,7 @@ let steamGamesInfo = [
             'Sports',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Psyonix LLC',
         discountStatus: {
             discount_active: true,
@@ -667,6 +695,7 @@ let steamGamesInfo = [
             'Turns',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'CREATIVE ASSEMBLY',
         discountStatus: {
             discount_active: true,
@@ -689,6 +718,7 @@ let steamGamesInfo = [
             'Singleplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Giants Software',
         discountStatus: {
             discount_active: true,
@@ -712,6 +742,7 @@ let steamGamesInfo = [
             'Multiplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Blizzard Entertainment, Inc.',
         discountStatus: {
             discount_active: false,
@@ -737,6 +768,7 @@ let steamGamesInfo = [
             'Singleplayer',
         ],
         achievements: true,
+        wishlisted: false,
         developer: 'Valve',
         discountStatus: {
             discount_active: true,
