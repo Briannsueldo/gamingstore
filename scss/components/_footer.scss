@@ -23,7 +23,7 @@ footer {
         h4 {
             font-size: 2rem;
             background: none;
-            color: #fbfbfb;
+            color: $main-white;
         }
 
         svg {
@@ -46,7 +46,7 @@ footer {
             gap: 1rem;
 
             h4 {
-                color: #1591EA;
+                color: $main-blue;
                 text-align: center;
                 background: none;
             }
@@ -63,7 +63,7 @@ footer {
                     
                     a {
                         background: none;
-                        color: #fbfbfb;
+                        color: $main-white;
                         text-decoration: none;
                         font-weight: 500;
                     }
@@ -78,7 +78,7 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         background: none;
-        border-top: 1px solid #3d3d3d;
+        border-top: 1px solid $second-gray;
         padding-top: 2rem;
 
         .svg-footer-container {
@@ -89,7 +89,7 @@ footer {
             background: none;
 
             svg {
-                color: #fbfbfb;
+                color: $main-white;
                 background: none;
             }
         }
@@ -120,7 +120,7 @@ footer {
                 }
 
                 label {
-                    color: #fbfbfb;
+                    color: $main-white;
                     background: none;
                 }
             }
@@ -129,9 +129,9 @@ footer {
                 width: 100%;
                 padding: 0.375rem;
                 outline: none;
-                border: 1px solid #1591EA;
+                border: 1px solid $main-blue;
                 color: #fbfbfb;
-                background-color: #1591EA;
+                background-color: $main-blue;
                 border-radius: 0.2rem;
             }
         }

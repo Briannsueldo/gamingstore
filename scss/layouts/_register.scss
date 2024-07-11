@@ -1,13 +1,13 @@
 
-
-
 .register-main-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     background: none;
     align-items: center;
-    /* animation: fadeIn 1s forwards; */
+    justify-content: center;
+    padding-block: 10rem;
+    height: 90vh;
 
     .register-title-container {
         background: none;
@@ -23,7 +23,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* background-color: rgba($color: #000000, $alpha: 0.5); */
         background-color: #181a21;
         border-radius: 0.5rem;
         width: fit-content;

@@ -1,7 +1,7 @@
 
 body {
-    /* linear-gradient(340deg, rgb(21, 145, 234) -47%, rgb(6, 6, 6) 93%) */
-    background: linear-gradient(340deg, rgba(21, 145, 234, 1) -25%, rgba(6, 6, 6, 1) 75%);
+    /* background: linear-gradient(340deg, rgba(21, 145, 234, 1) -25%, rgba(6, 6, 6, 1) 75%); */
+    background: linear-gradient(340deg, $main-blue -25%, $main-dark 75%);
 }
 
 .main-container {

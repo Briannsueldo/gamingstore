@@ -1,0 +1,225 @@
+/* body {
+    background: $third-dark;
+} */
+
+.wishlist-section {
+    display: flex;
+    width: 50%;
+    height: fit-content;
+    background: transparent;
+    justify-content: center;
+    padding-block: 5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .wishlist-container {
+        background-color: #3d3d3d;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        height: 6rem;
+
+        .profile-wishlist {
+            display: flex;
+            flex-direction: row;
+            height: 5rem;
+            gap: 2rem;
+            background-color: transparent;
+    
+            .profile-nickname {
+                background: transparent;
+                color: $main-white;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .input-container {
+            height: 5rem;
+            background: transparent;
+            display: flex;
+            align-items: center;
+
+            .input-wishlist {
+                height: 2rem;
+                border: 1px solid $main-dark;
+                outline: none;
+                display: flex;
+                padding: 0.5rem;
+                background-color: transparent;
+                box-shadow: inset 0px 0px 5px 2px $main-dark;
+                color: $main-white;
+            }
+
+            .search-game-wishlist {
+                height: 2rem;
+                border: 1px solid $main-dark;
+                border-left: none;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                padding-inline: 0.5rem 0.5rem;
+                color: $main-blue;
+                
+                svg {
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    .wishlist-games {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 0.5rem;
+        background: transparent;
+    }
+
+    .gameHorizontalCard {
+        display: flex;
+        background-color: transparent;
+
+        .horizontalCardLeft {
+            width: 50%;
+
+            .gameHorizontalImage {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .horizontalCardRight {
+            width: 50%;
+            background-color: $third-dark;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0.5rem;
+
+            .titleContainer {
+                text-align: center;
+                background: transparent;
+
+                .gameName {
+                    background: transparent;
+                    color: $main-white;
+                }
+            }
+
+            .infoContainer {
+                display: flex;
+                background-color: transparent;
+                align-items: end;
+
+                .priceContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+                    width: 50%;
+                    background-color: transparent;
+
+                    .gameOriginalPriceContainer {
+                        background-color: transparent;
+                        color: $main-gray;
+                        text-decoration: line-through;
+                        width: fit-content;
+                        padding-left: 1.2rem;
+                    }
+
+                    .finalGamePriceContainer {
+                        display: flex;
+                        gap: 0.5rem;
+                        background-color: transparent;
+                        align-items: center;
+
+                        .gamePrice {
+                            text-align: center;
+                            justify-content: center;
+                            width: 40%;
+                            background-color: transparent;
+                            color: #BEEE11;
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                        }
+
+                        .discountAmount {
+                            display: flex;
+                            text-align: center;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 0.2rem;
+                            background: linear-gradient(to right, $main-blue, $darker-blue);
+                            color: $main-white;
+                            font-weight: 500;
+                            padding: 0.3rem 0.5rem;
+                            height: fit-content;
+                            width: fit-content;
+                        }
+                    }
+                }
+
+                .buttonsAlertsContainer {
+                    width: 50%;
+                    background-color: transparent;
+                    height: 4.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    .addAnimationContainer {
+                        width: 100%;
+                        height: 2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $main-white;
+                        background: linear-gradient(to right, $main-blue, $darker-blue);
+                        border-radius: 0.2rem;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    .buttonsContainer {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        background: transparent;
+
+                        button {
+                            width: 50%;
+                            height: 2rem;
+                            border-radius: .2rem;
+                        }
+
+                        .cartButton {
+                            border: 1px solid $main-blue;
+                            background-color: $main-blue;
+                            color: $main-white;
+                            font-weight: 500;
+                        }
+
+                        .addLibraryButton {
+                            border: 1px solid $main-blue;
+                            background-color: $main-blue;
+                            color: $main-white;
+                            font-weight: 500;
+                        }
+
+                        .wishlistButton {
+                            border: 1px solid $main-blue;
+                            background: transparent;
+                            color: $main-blue;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}

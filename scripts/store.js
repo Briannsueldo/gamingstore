@@ -128,6 +128,10 @@ for (let games = 0; games < steamGamesInfo.length; games++) {
 
 };
 
+/* let gamesInWishlist = []; */
+
+let gamesInWishlist = JSON.parse(localStorage.getItem("gamesInWishlist")) || [];
+
 let addToWishlist = function () {
     let wishlistButton = document.querySelectorAll('.wishlistButton');
     let wishlistContainer = document.querySelector('.wishlist-counter');
@@ -136,6 +140,12 @@ let addToWishlist = function () {
     wishlistButton.forEach(button => {
         let index = button.dataset.index;
         let game = steamGamesInfo[index];
+
+        if (gamesInWishlist.some(search => search.name === game.name)) {
+            button.textContent = 'Remove';
+            button.classList.add('clicked');
+            game.wishlisted = true;
+        }
 
         button.addEventListener('click', () => {
 
@@ -159,7 +169,13 @@ let addToWishlist = function () {
                     addAnimationContainer.classList.add('fadeIn');
                 }, 2000);
 
+                if(!gamesInWishlist.includes(game)) {
+                    gamesInWishlist.push(game);
+                };
 
+                localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
+                localStorage.setItem(`wishlistButton_${index}`, 'Remove');
+                console.log(gamesInWishlist);
             } else {
                 button.textContent = 'Wishlist'
                 game.wishlisted = false;
@@ -173,6 +189,12 @@ let addToWishlist = function () {
                     addAnimationContainer.classList.remove('fadeOut');
                     addAnimationContainer.classList.add('fadeIn');
                 }, 2000);
+
+                gamesInWishlist = gamesInWishlist.filter(remainingGame => remainingGame.name !== game.name);
+                
+                localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
+                localStorage.removeItem(`wishlistButton_${index}`);
+                console.log(gamesInWishlist);
             }
         });
     });

@@ -1,17 +1,17 @@
 .navBar {
     width: 100%;
     height: 4.5rem;
-    background-color: #212121;
+    background-color: $third-dark;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: space-around;
 
     .logo-container {
-        background-color: #212121;
+        background-color: $third-dark;
 
         svg {
-            background-color: #212121;
+            background-color: $third-dark;
             height: fit-content;
             width: fit-content;
         }
@@ -27,20 +27,20 @@
             position: relative;
             gap: 8rem;
             list-style: none;
-            background-color: #212121;
+            background-color: $third-dark;
             font-size: 1rem;
             font-weight: 500;
 
             .menu-item {
 
                 padding: 1.4rem;
-                background-color: #212121;
+                background-color: $third-dark;
                 width: 8rem;
 
                 a {
                     text-decoration: none;
-                    background-color: #212121;
-                    color: #fbfbfb;
+                    background-color: $third-dark;
+                    color: $main-white;
                     display: flex;
                     position: relative;
                     height: 100%;
@@ -67,8 +67,8 @@
                     transition: 0.2s ease-in-out;
                     
                     li {
-                        background-color: #212121;
-                        color: #fbfbfb;
+                        background-color: $third-dark;
+                        color: $main-white;
                         padding: 1rem;
                         width: 100%;
                         text-align: center;
@@ -106,13 +106,13 @@
             .profile-nick {
                 font-size: 1.2rem;
                 font-weight: 500;
-                color: #fbfbfb;
+                color: $main-white;
                 background: transparent;
             }
 
             #profileMenuArrow {
                 background: transparent;
-                color: #fbfbfb;
+                color: $main-white;
             }
         }
     }
