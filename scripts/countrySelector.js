@@ -5,6 +5,7 @@ let dropdownMenu = document.querySelector(".country-selector-dropdown");
 
 countrySelector.addEventListener("click", () => {
     countrySelector.classList.toggle("active");
+    countrySelector.classList.remove('prevError');
 
     if (countrySelector.classList.contains("active")) {
         dropdownMenu.classList.add("displayBlock")

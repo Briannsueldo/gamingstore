@@ -2,22 +2,118 @@
 import { profileUpdate } from './profileUpdate.js';
 
 let titleMain = document.querySelector(".register-title-container h2");
-/* let formContainer = document.querySelector(".form-register-container"); */
 let mainContainer = document.querySelector(".register-main-container");
 
+let nameField = document.getElementById("firstName");
+let lastnameField = document.getElementById("lastName");
+let emailAddressField = document.getElementById("email");
+let passwordField = document.getElementById("password");
+let passwordRepeatField = document.getElementById("repeatPassword");
+let termsAccept = document.getElementById("terms");
+let countrySelector = document.querySelector(".country-selector");
+
+let firstForm = document.querySelector('form');
+/* 
 function firstFormSubmit(submit) {
+    if (!nameField.value) {
+        errorMessage();
+        submit.preventDefault();
+        return;
+    };
+
+    if (!lastnameField.value) {
+        errorMessage();
+        submit.preventDefault();
+        return;
+    };
+
+    if (!emailAddressField.value) {
+        errorMessage();
+        submit.preventDefault();
+        return;
+    }
+
+    if (!passwordField.value) {
+        errorMessage();
+        submit.preventDefault();
+        return;
+    }
+
+    if(!passwordRepeatField.value) {
+        errorMessage();
+        submit.preventDefault();
+        return;
+    }
+
+    if(!termsAccept.checked) {
+        errorMessage();
+        submit.preventDefault();
+        return;
+    }
+
+    if (countrySelector.querySelector("span").textContent === "-") {
+        submit.preventDefault();
+        countrySelector.querySelector('span').textContent = 'gay';
+        return;
+    }
+
+    let selectedCountryName = countrySelector.querySelector("span").textContent;
+    let selectedCountryFlag = countrySelector.querySelector("img").getAttribute("src");
+
+    let userInfo = [
+        {
+            name: nameField.value,
+            lastName: lastnameField.value,
+            email: emailAddressField.value,
+            password: passwordField.value,
+            countryName: selectedCountryName,
+            countryFlag: selectedCountryFlag,
+        },
+    ];
+
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+    secondFormSubmit();
+};
+
+let fieldContainer = document.querySelectorAll('.field-container');
+
+function errorMessage () {
+    fieldContainer.forEach(container => {
+        let label = container.querySelector('label');
+        let input = container.querySelector('input');
+
+        if(input.value === '' && (input.id === 'firstName' || input.id === 'lastName')) {
+            input.classList.add('error');
+            label.style.color = 'red';
+        } else if (input.id === 'email' && (input.value === '')) {
+            input.classList.add('error');
+            label.style.color = 'red';
+        } else if (input.id === 'password' && input.value === '') {
+            input.classList.add('error');
+            label.style.color = 'red';
+        } else if (input.id === 'repeatPassword' && input.value === '') {
+            input.classList.add('error');
+            label.style.color = 'red';
+        } else if (input.id === 'repeatPassword' && input.value !== passwordField.value) {
+            input.classList.add('error');
+            label.style.color = 'red';
+            label.textContent = 'PASSWORD DONT MATCH';
+        } else {
+            input.classList.remove('error');
+            label.style.color = '';
+        }
+    });
+};
+
+firstForm.addEventListener('submit', firstFormSubmit); */
+
+/* function firstFormSubmit(submit) {
     submit.preventDefault();
 
-    let nameField = document.getElementById("firstName");
-    let lastnameField = document.getElementById("lastName");
-    let emailAddressField = document.getElementById("email");
-    let passwordField = document.getElementById("password");
-    let passwordRepeatField = document.getElementById("repeatPassword");
-    let termsAccept = document.getElementById("terms");
-    let countrySelector = document.querySelector(".country-selector");
-
     if (!nameField.value) {
-        alert("Name required");
+        nameField.classList.add('error');
+        nameField.parentElement.querySelector('label').style.color = 'red';
         submit.preventDefault();
         return;
     };
@@ -79,13 +175,20 @@ function firstFormSubmit(submit) {
     postSubtmitAction();
 
     
-};
+}; */
 
-document.querySelector("form").addEventListener("submit", firstFormSubmit);
+/* document.querySelector("form").addEventListener("submit", firstFormSubmit); */
 
-function postSubtmitAction() {
+/* nameField.addEventListener("blur", validateFields);
+lastnameField.addEventListener("blur", validateFields);
+emailAddressField.addEventListener("blur", validateFields);
+passwordField.addEventListener("blur", validateFields);
+passwordRepeatField.addEventListener("blur", validateFields); */
+
+secondFormSubmit();
+
+function secondFormSubmit() {
     
-
     let registerContainer = document.querySelector(".register-main-container");
     let formContainer = document.querySelector(".form-register-container");
     let titleContainer = document.querySelector(".register-title-container");
@@ -189,16 +292,25 @@ function postSubtmitAction() {
 
                 picSelectionContainer.appendChild(picContainer);
 
-                picContainer.addEventListener("click", function() {
+                picContainer.addEventListener('click', () => {
                     let allImages = picSelectionContainer.querySelectorAll("img");
-                    allImages.forEach(image => image.classList.remove("active"));
+                    
+                    allImages.forEach(image => {
+                        image.classList.remove("active");
+                        image.style.filter = '';
+                    });
 
-                    picContainer.classList.toggle("active");
+                    picContainer.classList.toggle('active');
+
+                    if (picContainer.classList.contains('active')) {
+                        picContainer.style.filter = 'none';
+                    };
+
                     imageSelected = profileImages[i].src;
                 });
-            }
+            };
 
-            
+
             // Hidden forwards trigger button action
             let picUpload = document.createElement("input");
             picUpload.type = "file";
@@ -271,23 +383,6 @@ function postSubtmitAction() {
     }
 };
 
-/* function profileUpdate () {
-    let profileContainer = document.getElementById("profile-container");
-    let profileImage = document.getElementById("profile-image");
-    let profileNickname = document.getElementById("profile-nickname");
-
-
-    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
-    
-    let userNick = userInfo[0].nickname;
-    let userImg = userInfo[0].userImage;
-
-    profileImage.src = userImg;
-    profileNickname.textContent = userNick;
-
-    profileContainer.style.display = "flex";
-}; */
-
 function welcomeText() {
     // Welcome text
     let formContainer = document.querySelector(".form-register-container");
@@ -323,7 +418,7 @@ function welcomeText() {
 }
 
 
-
+/* firstFormSubmit(); */
 
 
 

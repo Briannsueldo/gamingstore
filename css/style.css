@@ -488,7 +488,6 @@ body {
 .register-main-container .form-register-container form .form-prompt .form-prompt-input {
   padding: 0.5rem;
   background: #32353c;
-  border: none;
   outline: none;
   border: 1px solid #32353c;
   border-radius: 0.2rem;
@@ -580,17 +579,17 @@ body {
 .register-main-container .form-register-container form .form-checkbox input {
   background: none;
 }
-.register-main-container .form-register-container form .form-checkbox span {
+.register-main-container .form-register-container form .form-checkbox label {
   background: none;
   color: #fbfbfb;
 }
-.register-main-container .form-register-container form .form-checkbox span a {
+.register-main-container .form-register-container form .form-checkbox label a {
   background: none;
   color: #fbfbfb;
   text-decoration: none;
   transition: 0.2s ease-in-out;
 }
-.register-main-container .form-register-container form .form-checkbox span a:hover {
+.register-main-container .form-register-container form .form-checkbox label a:hover {
   color: #755FFF;
 }
 .register-main-container .form-register-container form .submitButton {
@@ -668,6 +667,10 @@ body {
 }
 .continueButton:hover {
   background-color: #755FFF;
+}
+
+.error {
+  border: 1px solid red !important;
 }
 
 .store-main-container {
@@ -842,6 +845,11 @@ body {
 .store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard {
   display: flex;
   background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+.store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard:hover {
+  box-shadow: 5px 5px 4px 0px;
+  transform: translate(-5px, -5px);
 }
 .store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardLeft {
   width: 50%;

@@ -190,6 +190,12 @@
                 .gameHorizontalCard {
                     display: flex;
                     background-color: transparent;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        box-shadow: 5px 5px 4px 0px;
+                        transform: translate(-5px, -5px);
+                    }
 
                     .horizontalCardLeft {
                         width: 50%;

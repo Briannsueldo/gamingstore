@@ -147,6 +147,22 @@ let addToWishlist = function () {
             game.wishlisted = true;
         }
 
+        let applyHover = () => {
+            button.style.color = '#da1e28';
+            button.style.border = '1px solid #da1e28';
+            button.style.transition = '0.2s ease-in-out'
+        };
+
+        let removeHover = () => {
+            button.style.color = '';
+            button.style.border = '';
+        };
+
+        if (button.textContent === 'Remove') {
+            button.addEventListener('mouseover', applyHover);
+            button.addEventListener('mouseout', removeHover);
+        };
+
         button.addEventListener('click', () => {
 
             let parentContainer = button.parentElement.parentElement;
@@ -176,6 +192,9 @@ let addToWishlist = function () {
                 localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
                 localStorage.setItem(`wishlistButton_${index}`, 'Remove');
                 console.log(gamesInWishlist);
+
+                button.addEventListener('mouseover', applyHover);
+                button.addEventListener('mouseout', removeHover);
             } else {
                 button.textContent = 'Wishlist'
                 game.wishlisted = false;
@@ -195,10 +214,17 @@ let addToWishlist = function () {
                 localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
                 localStorage.removeItem(`wishlistButton_${index}`);
                 console.log(gamesInWishlist);
+
+                button.removeEventListener('mouseover', applyHover);
+                button.removeEventListener('mouseout', removeHover);
+
+                button.style.color = '';
+                button.style.border = '';
             }
         });
     });
 };
+
 
 // gamesContainer
 let searchGameInput = document.getElementById('search-game-input');

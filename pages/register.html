@@ -57,18 +57,18 @@
         <div class="form-register-container">
             <form action="" class="form">
                 <div class="form-prompt name-input">
-                    <div>
-                        <label for="" class="form-prompt-label">FIRST NAME</label>
-                        <input type="text" id="firstName" class="form-prompt-input">
+                    <div class="field-container">
+                        <label for="firstName" class="form-prompt-label">FIRST NAME</label>
+                        <input type="text" id="firstName" class="form-prompt-input" name="firstname">
                     </div>
-                    <div>
-                        <label for="" class="form-prompt-label">LAST NAME</label>
-                        <input type="text" id="lastName" class="form-prompt-input">
+                    <div class="field-container">
+                        <label for="lastName" class="form-prompt-label">LAST NAME</label>
+                        <input type="text" id="lastName" class="form-prompt-input" name="lastname">
                     </div>
                 </div>
                 <div class="form-prompt">
                     <label for="" class="form-prompt-label">COUNTRY</label>
-                    <div class="country-selector">
+                    <div class="country-selector prevError">
                         <span>-</span>
                     </div>
                     <div class="country-selector-dropdown">
@@ -98,20 +98,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">EMAIL ADDRESS</label>
-                    <input type="email" id="email" class="form-prompt-input">
+                <div class="form-prompt field-container">
+                    <label for="email" class="form-prompt-label">EMAIL ADDRESS</label>
+                    <input type="email" id="email" class="form-prompt-input" name="email">
                 </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">PASSWORD</label>
-                    <input type="password" id="password" class="form-prompt-input">
+                <div class="form-prompt field-container">
+                    <label for="password" class="form-prompt-label">PASSWORD</label>
+                    <input type="password" id="password" class="form-prompt-input" name="password">
                 </div>
-                <div class="form-prompt">
-                    <label for="" class="form-prompt-label">REPEAT PASSWORD</label>
-                    <input type="password" id="repeatPassword" class="form-prompt-input">
+                <div class="form-prompt field-container">
+                    <label for="repeatPassword" class="form-prompt-label">REPEAT PASSWORD</label>
+                    <input type="password" id="repeatPassword" class="form-prompt-input" name="repeatPassword">
                 </div>
                 <div class="form-checkbox">
-                    <input type="checkbox" name="" id="terms"><span>Accept <a href="">terms and conditions</a></span>
+                    <input type="checkbox" name="" id="terms" name="tyc">
+                    <label for="terms">Accept <a href="">terms and conditions</a></label>
                 </div>
                 <button type="submit" class="submitButton">SUBMIT</button>
             </form>
