@@ -1,6 +1,10 @@
 
 import { profileUpdate } from './profileUpdate.js';
 
+import { hideBar } from './profileUpdate.js';
+
+hideBar();
+
 let titleMain = document.querySelector(".register-title-container h2");
 let mainContainer = document.querySelector(".register-main-container");
 
@@ -11,10 +15,12 @@ let passwordField = document.getElementById("password");
 let passwordRepeatField = document.getElementById("repeatPassword");
 let termsAccept = document.getElementById("terms");
 let countrySelector = document.querySelector(".country-selector");
+let submitButton = document.querySelector(".submitButton");
 
-let firstForm = document.querySelector('form');
-/* 
+let firstForm = document.querySelector('.form');
+
 function firstFormSubmit(submit) {
+    submit.preventDefault();
     if (!nameField.value) {
         errorMessage();
         submit.preventDefault();
@@ -53,7 +59,7 @@ function firstFormSubmit(submit) {
 
     if (countrySelector.querySelector("span").textContent === "-") {
         submit.preventDefault();
-        countrySelector.querySelector('span').textContent = 'gay';
+        countrySelector.querySelector('span').textContent = 'Select a country';
         return;
     }
 
@@ -76,9 +82,11 @@ function firstFormSubmit(submit) {
     secondFormSubmit();
 };
 
-let fieldContainer = document.querySelectorAll('.field-container');
+firstForm.addEventListener('submit', firstFormSubmit);
 
 function errorMessage () {
+    let fieldContainer = document.querySelectorAll('.field-container');
+
     fieldContainer.forEach(container => {
         let label = container.querySelector('label');
         let input = container.querySelector('input');
@@ -105,87 +113,6 @@ function errorMessage () {
         }
     });
 };
-
-firstForm.addEventListener('submit', firstFormSubmit); */
-
-/* function firstFormSubmit(submit) {
-    submit.preventDefault();
-
-    if (!nameField.value) {
-        nameField.classList.add('error');
-        nameField.parentElement.querySelector('label').style.color = 'red';
-        submit.preventDefault();
-        return;
-    };
-
-    if (!lastnameField.value) {
-        alert("Last name required");
-        submit.preventDefault();
-        return;
-    };
-
-    if (countrySelector.querySelector("span").textContent === "-") {
-        alert("Select a country");
-        submit.preventDefault();
-        return;
-    }
-
-    if (!emailAddressField.value) {
-        alert("Email required");
-        submit.preventDefault();
-        return;
-    };
-
-    if (!passwordField.value) {
-        alert("Password required");
-        submit.preventDefault();
-        return;
-    };
-
-    if(!termsAccept.checked) {
-        alert("T&C must be accepted")
-        submit.preventDefault();
-        return;
-    }
-
-    if (passwordField.value === passwordRepeatField.value) {
-        // Form submit
-    } else {
-        alert("Password dont match")
-        submit.preventDefault();
-        return;
-    }
-
-    let selectedCountryName = countrySelector.querySelector("span").textContent;
-    let selectedCountryFlag = countrySelector.querySelector("img").getAttribute("src");
-
-    let userInfo = [
-        {
-            name: nameField.value,
-            lastName: lastnameField.value,
-            email: emailAddressField.value,
-            password: passwordField.value,
-            countryName: selectedCountryName,
-            countryFlag: selectedCountryFlag,
-        },
-    ];
-
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
-    postSubtmitAction();
-
-    
-}; */
-
-/* document.querySelector("form").addEventListener("submit", firstFormSubmit); */
-
-/* nameField.addEventListener("blur", validateFields);
-lastnameField.addEventListener("blur", validateFields);
-emailAddressField.addEventListener("blur", validateFields);
-passwordField.addEventListener("blur", validateFields);
-passwordRepeatField.addEventListener("blur", validateFields); */
-
-secondFormSubmit();
 
 function secondFormSubmit() {
     
@@ -322,7 +249,6 @@ function secondFormSubmit() {
             uploadButton.classList.add("uploadButton");
             uploadButton.type = "button";
 
-
             //Trigger input type file
             uploadButton.addEventListener("click", () => {
                 picUpload.click();
@@ -409,6 +335,9 @@ function welcomeText() {
     setTimeout(() => {    
         let continueButton = document.createElement("button");
         continueButton.textContent = "WATCH THE STORE";
+        continueButton.addEventListener('click', () => {
+            window.location.href = './store.html';
+        })
         mainContainer.appendChild(continueButton);
     
 
@@ -416,9 +345,3 @@ function welcomeText() {
         continueButton.classList.add("continueButton");
     }, 3000);
 }
-
-
-/* firstFormSubmit(); */
-
-
-

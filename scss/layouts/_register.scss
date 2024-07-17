@@ -172,7 +172,7 @@
 
                     a {
                         background: none;
-                        color: $main-white;
+                        color: $darker-blue;
                         text-decoration: none;
                         transition: 0.2s ease-in-out;
 
@@ -192,6 +192,7 @@
                 font-weight: 600;
                 background: $darker-blue;
                 transition: 0.2s ease-in-out;
+                cursor: pointer;
 
                 &:hover {
                     background: $main-blue;

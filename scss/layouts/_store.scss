@@ -228,6 +228,7 @@
                             display: flex;
                             background-color: transparent;
                             align-items: end;
+                            justify-content: end;
 
                             .priceContainer {
                                 display: flex;
@@ -240,8 +241,9 @@
                                     background-color: transparent;
                                     color: $main-gray;
                                     text-decoration: line-through;
-                                    width: fit-content;
-                                    padding-left: 1.2rem;
+                                    width: 40%;
+                                    display: flex;
+                                    justify-content: center;
                                 }
 
                                 .finalGamePriceContainer {

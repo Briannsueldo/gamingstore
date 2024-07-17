@@ -5,146 +5,101 @@ profileUpdate();
 
 import { steamGamesInfo } from './arrays/steamGames.js';
 
-/* console.log(steamGamesInfo.length); */
-
-let gamesContainer = document.querySelector('.games-container');
-
 //
 
-//
-
-for (let games = 0; games < steamGamesInfo.length; games++) {
-
-    let game = steamGamesInfo[games];
+function createCards (gamesArray) {
+    let gamesContainer = document.querySelector('.games-container');
+    gamesContainer.innerHTML = '';
+    gamesArray.forEach(game => {
+        let gameHorizontalCard = document.createElement('div');
+        gameHorizontalCard.classList.add('gameHorizontalCard');
     
-    let gameHorizontalCard = document.createElement('div');
-    gameHorizontalCard.classList.add('gameHorizontalCard');
-
-    //
-
-    let horizontalCardLeft = document.createElement('div');
-    horizontalCardLeft.classList.add('horizontalCardLeft');
-    gameHorizontalCard.appendChild(horizontalCardLeft);
-
-    let horizontalCardRight = document.createElement('div');
-    horizontalCardRight.classList.add('horizontalCardRight');
-    gameHorizontalCard.appendChild(horizontalCardRight);
-
-    let titleContainer = document.createElement('div');
-    titleContainer.classList.add('titleContainer');
-
-    let infoContainer = document.createElement('div');
-    infoContainer.classList.add('infoContainer');
-
-    let priceContainer = document.createElement('div');
-    priceContainer.classList.add('priceContainer');
-    infoContainer.appendChild(priceContainer);
-
-    let buttonsAlertsContainer = document.createElement('div');
-    buttonsAlertsContainer.classList.add('buttonsAlertsContainer');
-    infoContainer.appendChild(buttonsAlertsContainer);
-
-    let addAnimationContainer = document.createElement('div');
-    addAnimationContainer.classList.add('addAnimationContainer');
-    buttonsAlertsContainer.appendChild(addAnimationContainer);
-
-    let buttonsContainer = document.createElement('div');
-    buttonsContainer.classList.add('buttonsContainer');
-    buttonsAlertsContainer.appendChild(buttonsContainer);
-
-    horizontalCardRight.appendChild(titleContainer);
-    horizontalCardRight.appendChild(infoContainer);
-
-    //
-
-    let gameHorizontalImage = document.createElement('img');
-    gameHorizontalImage.classList.add('gameHorizontalImage');
-    horizontalCardLeft.appendChild(gameHorizontalImage);
-    gameHorizontalImage.src = game.imageHeader;
-
-    //
-
-    let gameName = document.createElement('h3');
-    gameName.classList.add('gameName');
-    titleContainer.appendChild(gameName);
-    gameName.textContent = game.name;
-
-    //
-
-    //
-
-    let cartButton = document.createElement('button');
-    cartButton.classList.add('cartButton');
-    cartButton.textContent = 'Add to cart';
-
-    buttonsContainer.appendChild(cartButton);
-
-    let finalGamePriceContainer = document.createElement('div');
-    finalGamePriceContainer.classList.add('finalGamePriceContainer');
-    let gamePrice = document.createElement('span');
-    gamePrice.classList.add('gamePrice');
-
-
-    if (game.priceStatus.is_free === true) {
-        let addLibraryButton = document.createElement('button');
-        addLibraryButton.classList.add('addLibraryButton');
-        addLibraryButton.textContent = 'Add to library'
-        buttonsContainer.appendChild(addLibraryButton);
-        cartButton.remove();
-    } else {
-        if (game.discountStatus.discount_active === true) {
-            
-            let gameOriginalPriceContainer = document.createElement('div');
-            gameOriginalPriceContainer.textContent = `${game.priceStatus.price}$`;
-            gameOriginalPriceContainer.classList.add('gameOriginalPriceContainer');
-            priceContainer.appendChild(gameOriginalPriceContainer);
-
-            
-            priceContainer.appendChild(finalGamePriceContainer);
-
-            
-            gamePrice.textContent = `${(((game.priceStatus.price) * (100 - game.discountStatus.discount_amount)) / 100).toFixed(2)}$`;
-            finalGamePriceContainer.appendChild(gamePrice);
-
-            let discountAmout = document.createElement('span');
-            discountAmout.textContent = `-${game.discountStatus.discount_amount}%`;
-            finalGamePriceContainer.appendChild(discountAmout);
-            discountAmout.classList.add('discountAmount');
-        } else if (game.discountStatus.discount_active === false) {
-            gamePrice.textContent = `${game.priceStatus.price}$`;
-            finalGamePriceContainer.appendChild(gamePrice);
-            priceContainer.appendChild(finalGamePriceContainer);
+        gameHorizontalCard.innerHTML = `
+            <div class="horizontalCardLeft">
+                <img class="gameHorizontalImage" src="${game.imageHeader}">
+            </div>
+            <div class="horizontalCardRight">
+                <div class="titleContainer">
+                    <h3 class="gameName">${game.name}</h3>
+                </div>
+                <div class="infoContainer">
+    
+                </div>
+            </div>
+        `
+        let infoContainer = gameHorizontalCard.querySelector('.infoContainer');
+    
+        if (game.priceStatus.is_free === true) {
+            infoContainer.innerHTML = `
+                <div class="buttonsAlertsContainer">
+                    <div class="addAnimationContainer"></div>
+                    <div class="buttonsContainer">
+                        <button class="addLibraryButton">Add to library</button>
+                        <button class="wishlistButton" id="${game.id}">Wishlist</button>
+                    </div>
+                </div>
+            `
+        } else {
+            if(game.discountStatus.discount_active === false) {
+                infoContainer.innerHTML = `
+                <div class="priceContainer">
+                    <div class="finalGamePriceContainer">
+                        <span class="gamePrice">${game.priceStatus.price}$</span>
+                    </div>
+                </div>
+                <div class="buttonsAlertsContainer">
+                    <div class="addAnimationContainer"></div>
+                    <div class="buttonsContainer">
+                        <button class="cartButton">Add to cart</button>
+                        <button class="wishlistButton" id="${game.id}">Wishlist</button>
+                    </div>
+                </div>
+            `
+            } else {
+                infoContainer.innerHTML = `
+                <div class="priceContainer">
+                    <div class="gameOriginalPriceContainer">
+                        ${game.priceStatus.price}$
+                    </div>
+                    <div class="finalGamePriceContainer">
+                        <span class="gamePrice">${(((game.priceStatus.price) * (100 - game.discountStatus.discount_amount)) / 100).toFixed(2)}$</span>
+                        <span class="discountAmount">-${game.discountStatus.discount_amount}%</span>
+                    </div>
+                </div>
+                <div class="buttonsAlertsContainer">
+                    <div class="addAnimationContainer"></div>
+                    <div class="buttonsContainer">
+                        <button class="cartButton">Add to cart</button>
+                        <button class="wishlistButton" id="${game.id}">Wishlist</button>
+                    </div>
+                </div>
+            `
+            }
         }
-    }
+    
+        gamesContainer.appendChild(gameHorizontalCard);
+    });
+}
 
-    let wishlistButton = document.createElement('button');
-    wishlistButton.classList.add('wishlistButton');
-    wishlistButton.textContent = 'Wishlist';
-    wishlistButton.dataset.index = games;
+createCards(steamGamesInfo);
 
-    buttonsContainer.appendChild(wishlistButton);
+export { createCards };
 
-    gamesContainer.appendChild(gameHorizontalCard);
-
-};
-
-/* let gamesInWishlist = []; */
 
 let gamesInWishlist = JSON.parse(localStorage.getItem("gamesInWishlist")) || [];
 
 let addToWishlist = function () {
     let wishlistButton = document.querySelectorAll('.wishlistButton');
-    let wishlistContainer = document.querySelector('.wishlist-counter');
-    let wishlistCounter = 0;
 
     wishlistButton.forEach(button => {
-        let index = button.dataset.index;
-        let game = steamGamesInfo[index];
+        let gameId = button.id;
+        let game = steamGamesInfo.find(game => game.id === gameId);
 
-        if (gamesInWishlist.some(search => search.name === game.name)) {
+        if (gamesInWishlist.some(wishedGame => wishedGame.id === gameId)) {
             button.textContent = 'Remove';
             button.classList.add('clicked');
-            game.wishlisted = true;
+        } else {
+            button.textContent = 'Wishlist';
         }
 
         let applyHover = () => {
@@ -152,15 +107,10 @@ let addToWishlist = function () {
             button.style.border = '1px solid #da1e28';
             button.style.transition = '0.2s ease-in-out'
         };
-
+    
         let removeHover = () => {
             button.style.color = '';
             button.style.border = '';
-        };
-
-        if (button.textContent === 'Remove') {
-            button.addEventListener('mouseover', applyHover);
-            button.addEventListener('mouseout', removeHover);
         };
 
         button.addEventListener('click', () => {
@@ -175,9 +125,6 @@ let addToWishlist = function () {
                 button.textContent = 'Remove';
                 game.wishlisted = true;
 
-                wishlistCounter++;
-                wishlistContainer.textContent = wishlistCounter;
-
                 addAnimationContainer.textContent = 'Added successfully'
                 addAnimationContainer.classList.add('fadeOut');
                 setTimeout(() => {
@@ -185,22 +132,20 @@ let addToWishlist = function () {
                     addAnimationContainer.classList.add('fadeIn');
                 }, 2000);
 
-                if(!gamesInWishlist.includes(game)) {
+                if (!gamesInWishlist.find(wishedGame => wishedGame.id === gameId)) {
                     gamesInWishlist.push(game);
-                };
+                }
 
                 localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
-                localStorage.setItem(`wishlistButton_${index}`, 'Remove');
                 console.log(gamesInWishlist);
 
                 button.addEventListener('mouseover', applyHover);
                 button.addEventListener('mouseout', removeHover);
+
+                wishlistCounter();
             } else {
                 button.textContent = 'Wishlist'
                 game.wishlisted = false;
-
-                wishlistCounter--;
-                wishlistContainer.textContent = wishlistCounter;
 
                 addAnimationContainer.textContent = 'Remove successfully'
                 addAnimationContainer.classList.add('fadeOut');
@@ -209,10 +154,9 @@ let addToWishlist = function () {
                     addAnimationContainer.classList.add('fadeIn');
                 }, 2000);
 
-                gamesInWishlist = gamesInWishlist.filter(remainingGame => remainingGame.name !== game.name);
-                
+                gamesInWishlist = gamesInWishlist.filter(wishedGame => wishedGame.id !== gameId);
+
                 localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
-                localStorage.removeItem(`wishlistButton_${index}`);
                 console.log(gamesInWishlist);
 
                 button.removeEventListener('mouseover', applyHover);
@@ -220,11 +164,39 @@ let addToWishlist = function () {
 
                 button.style.color = '';
                 button.style.border = '';
+
+                wishlistCounter();
             }
         });
+
+        if(button.textContent === 'Remove') {
+            button.addEventListener('mouseover', applyHover);
+            button.addEventListener('mouseout', removeHover);
+        }
     });
 };
 
+export { addToWishlist };
+
+addToWishlist();
+
+function wishlistCounter() {
+    let wishlistContainer = document.querySelector('.wishlist-counter');
+
+    if (wishlistContainer) {
+        let wishlistSize = gamesInWishlist.length;
+        localStorage.setItem("wishlistSize", JSON.stringify(wishlistSize));
+        wishlistContainer.textContent = wishlistSize;
+    } else {
+        console.log('No wishlist counter element found.');
+    }
+}
+
+if (window.location.pathname.includes('store.html')) {
+    wishlistCounter();
+}
+
+/* wishlistCounter(); */
 
 // gamesContainer
 let searchGameInput = document.getElementById('search-game-input');
@@ -234,7 +206,7 @@ let gameCards = document.querySelectorAll('.gameHorizontalCard');
 
 let searchByName = function () {
     searchGameButton.addEventListener('click', () => {
-
+        
         let search = searchGameInput.value.toLowerCase();
 
         gameName.forEach((game, index) => {
@@ -249,48 +221,43 @@ let searchByName = function () {
     });
 };
 
+if (window.location.pathname.includes('store.html')) {
+    searchByName();
+}
+
+/* searchByName(); */
+
 let categorySelector = document.querySelectorAll('.category-selector');
 
 let filterByCategory = function () {
     categorySelector.forEach(button => {
         button.addEventListener('click', (event) => {
+            
+            event.preventDefault();
 
             categorySelector.forEach(button => button.classList.remove('category-selected'));
 
-            event.preventDefault();
             let categoryText = button.textContent.toLowerCase();
-            filterGamesByCategory(categoryText);
 
             button.classList.add('category-selected');
 
-            if(button.textContent.toLowerCase() === 'all') {
-                setTimeout(() => {
-                    button.classList.add('category-selected');
-                    button.classList.remove('category-selected');
-                }, 2000);
-            }
+            gameCards.forEach((cards, index) => {
+                let gameCategories = steamGamesInfo[index].categories.map(category => category.toLowerCase());
+
+                if (categoryText === 'all') {
+                    cards.style.display = 'flex';
+                } else if (gameCategories.includes(categoryText)) {
+                    cards.style.display = 'flex';
+                } else {
+                    cards.style.display = 'none';
+                };
+            });
         });
     });
 };
 
-let filterGamesByCategory = function (categoryClicked) {
-    let categorySelected = categoryClicked.toLowerCase();
+/* filterByCategory(); */
 
-    gameCards.forEach((gameCard, index) => {
-        let gameCategories = steamGamesInfo[index].categories.map(category => category.toLowerCase());
-
-        if (categorySelected === 'all') {
-            gameCard.style.display = 'flex';
-        } else if (gameCategories.includes(categorySelected)) {
-            gameCard.style.display = 'flex';
-        } else {
-            gameCard.style.display = 'none';
-        };
-    });
-};
-
-filterByCategory();
-
-searchByName();
-
-addToWishlist();
+if (window.location.pathname.includes('store.html')) {
+    filterByCategory();
+}

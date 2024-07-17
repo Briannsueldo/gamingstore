@@ -249,6 +249,7 @@ footer .footer-contact .form-container button {
 body {
   /* background: linear-gradient(340deg, rgba(21, 145, 234, 1) -25%, rgba(6, 6, 6, 1) 75%); */
   background: linear-gradient(340deg, #755FFF -25%, #181818 75%);
+  /* gap: 5rem; */
 }
 
 .main-container {
@@ -331,7 +332,10 @@ body {
   cursor: pointer;
   height: 53px;
 }
-.main-container .stepbystep-container .step-container .step-1 h4 {
+.main-container .stepbystep-container .step-container .step-1 a {
+  text-decoration: none;
+}
+.main-container .stepbystep-container .step-container .step-1 a h4 {
   color: #fbfbfb;
   background: transparent;
   font-weight: 600;
@@ -585,7 +589,7 @@ body {
 }
 .register-main-container .form-register-container form .form-checkbox label a {
   background: none;
-  color: #fbfbfb;
+  color: #C854FF;
   text-decoration: none;
   transition: 0.2s ease-in-out;
 }
@@ -601,6 +605,7 @@ body {
   font-weight: 600;
   background: #C854FF;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 .register-main-container .form-register-container form .submitButton:hover {
   background: #755FFF;
@@ -878,6 +883,7 @@ body {
   display: flex;
   background-color: transparent;
   align-items: end;
+  justify-content: end;
 }
 .store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer {
   display: flex;
@@ -890,8 +896,9 @@ body {
   background-color: transparent;
   color: rgba(245, 245, 245, 0.6352941176);
   text-decoration: line-through;
-  width: fit-content;
-  padding-left: 1.2rem;
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 .store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer {
   display: flex;
@@ -1075,25 +1082,25 @@ body {
 .wishlist-section .wishlist-container .input-container .search-game-wishlist svg {
   background: transparent;
 }
-.wishlist-section .wishlist-games {
+.wishlist-section .games-container {
   display: flex;
   flex-direction: column;
   height: fit-content;
   gap: 0.5rem;
   background: transparent;
 }
-.wishlist-section .gameHorizontalCard {
+.wishlist-section .games-container .gameHorizontalCard {
   display: flex;
   background-color: transparent;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardLeft {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardLeft {
   width: 50%;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardLeft .gameHorizontalImage {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardLeft .gameHorizontalImage {
   width: 100%;
   height: 100%;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight {
   width: 50%;
   background-color: #212121;
   display: flex;
@@ -1101,40 +1108,41 @@ body {
   justify-content: space-between;
   padding: 0.5rem;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .titleContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .titleContainer {
   text-align: center;
   background: transparent;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .titleContainer .gameName {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .titleContainer .gameName {
   background: transparent;
   color: #fbfbfb;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer {
   display: flex;
   background-color: transparent;
   align-items: end;
+  justify-content: end;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
   width: 50%;
   background-color: transparent;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .gameOriginalPriceContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .gameOriginalPriceContainer {
   background-color: transparent;
   color: rgba(245, 245, 245, 0.6352941176);
   text-decoration: line-through;
   width: fit-content;
   padding-left: 1.2rem;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer {
   display: flex;
   gap: 0.5rem;
   background-color: transparent;
   align-items: center;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer .gamePrice {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer .gamePrice {
   text-align: center;
   justify-content: center;
   width: 40%;
@@ -1143,7 +1151,7 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer .discountAmount {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer .discountAmount {
   display: flex;
   text-align: center;
   align-items: center;
@@ -1156,7 +1164,7 @@ body {
   height: fit-content;
   width: fit-content;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer {
   width: 50%;
   background-color: transparent;
   height: 4.5rem;
@@ -1164,7 +1172,7 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .addAnimationContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .addAnimationContainer {
   width: 100%;
   height: 2rem;
   display: flex;
@@ -1176,31 +1184,31 @@ body {
   opacity: 0;
   visibility: hidden;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   background: transparent;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer button {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer button {
   width: 50%;
   height: 2rem;
   border-radius: 0.2rem;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .cartButton {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .cartButton {
   border: 1px solid #755FFF;
   background-color: #755FFF;
   color: #fbfbfb;
   font-weight: 500;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .addLibraryButton {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .addLibraryButton {
   border: 1px solid #755FFF;
   background-color: #755FFF;
   color: #fbfbfb;
   font-weight: 500;
 }
-.wishlist-section .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .wishlistButton {
+.wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .wishlistButton {
   border: 1px solid #755FFF;
   background: transparent;
   color: #755FFF;
