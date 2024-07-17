@@ -21,7 +21,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/1/headerImage.jpg',
+        imageHeader: '../images/games/1/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -46,7 +46,7 @@ let steamGamesInfo = [
             discount_amount: 20,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/2/headerImage.jpg',
+        imageHeader: '../images/games/2/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -72,7 +72,7 @@ let steamGamesInfo = [
             discount_amount: 30,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/3/headerImage.jpg',
+        imageHeader: '../images/games/3/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -96,7 +96,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/4/headerImage.jpg',
+        imageHeader: '../images/games/4/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -119,7 +119,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/5/headerImage.jpg',
+        imageHeader: '../images/games/5/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -142,7 +142,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/6/headerImage.jpg',
+        imageHeader: '../images/games/6/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -166,7 +166,7 @@ let steamGamesInfo = [
             discount_amount: 63,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/7/headerImage.jpg',
+        imageHeader: '../images/games/7/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -191,7 +191,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/8/headerImage.jpg',
+        imageHeader: '../images/games/8/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -215,7 +215,7 @@ let steamGamesInfo = [
             discount_amount: 40,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/9/headerImage.jpg',
+        imageHeader: '../images/games/9/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -239,7 +239,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/10/headerImage.jpg',
+        imageHeader: '../images/games/10/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -262,7 +262,7 @@ let steamGamesInfo = [
             discount_amount: 25,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/11/headerImage.jpg',
+        imageHeader: '../images/games/11/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -288,7 +288,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/12/headerImage.jpg',
+        imageHeader: '../images/games/12/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -311,7 +311,7 @@ let steamGamesInfo = [
             discount_amount: 95,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/13/headerImage.jpg',
+        imageHeader: '../images/games/13/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -332,7 +332,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/15/headerImage.jpg',
+        imageHeader: '../images/games/15/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -356,7 +356,7 @@ let steamGamesInfo = [
             discount_amount: 60,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/16/headerImage.jpg',
+        imageHeader: '../images/games/16/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -381,7 +381,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/17/headerImage.jpg',
+        imageHeader: '../images/games/17/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -405,7 +405,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/18/headerImage.jpg',
+        imageHeader: '../images/games/18/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -430,7 +430,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/19/headerImage.jpg',
+        imageHeader: '../images/games/19/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -454,7 +454,7 @@ let steamGamesInfo = [
             discount_amount: 90,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/20/headerImage.jpg',
+        imageHeader: '../images/games/20/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -478,7 +478,7 @@ let steamGamesInfo = [
             discount_amount: 70,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/21/headerImage.jpg',
+        imageHeader: '../images/games/21/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -501,7 +501,7 @@ let steamGamesInfo = [
             discount_amount: 60,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/22/headerImage.jpg',
+        imageHeader: '../images/games/22/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -524,7 +524,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/23/headerImage.jpg',
+        imageHeader: '../images/games/23/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -550,7 +550,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/24/headerImage.jpg',
+        imageHeader: '../images/games/24/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -576,7 +576,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/25/headerImage.jpg',
+        imageHeader: '../images/games/25/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -605,7 +605,7 @@ let steamGamesInfo = [
             discount_amount: 33,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/26/headerImage.jpg',
+        imageHeader: '../images/games/26/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -628,7 +628,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/27/headerImage.jpg',
+        imageHeader: '../images/games/27/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -652,7 +652,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/28/headerImage.jpg',
+        imageHeader: '../images/games/28/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -677,7 +677,7 @@ let steamGamesInfo = [
             discount_amount: 75,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/29/headerImage.jpg',
+        imageHeader: '../images/games/29/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -702,7 +702,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/30/headerImage.jpg',
+        imageHeader: '../images/games/30/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -725,7 +725,7 @@ let steamGamesInfo = [
             discount_amount: 50,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/31/headerImage.jpg',
+        imageHeader: '../images/games/31/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -749,7 +749,7 @@ let steamGamesInfo = [
             discount_amount: 0,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/32/headerImage.jpg',
+        imageHeader: '../images/games/32/headerImage.jpg',
         imageCarrousel: '',
     },
     {
@@ -775,7 +775,7 @@ let steamGamesInfo = [
             discount_amount: 90,
         },
         imageSmall: '',
-        imageHeader: '../../images/games/33/headerImage.jpg',
+        imageHeader: '../images/games/33/headerImage.jpg',
         imageCarrousel: '',
     },
 ];

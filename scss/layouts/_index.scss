@@ -2,7 +2,6 @@
 body {
     /* background: linear-gradient(340deg, rgba(21, 145, 234, 1) -25%, rgba(6, 6, 6, 1) 75%); */
     background: linear-gradient(340deg, $main-blue -25%, $main-dark 75%);
-    /* gap: 5rem; */
 }
 
 .main-container {
@@ -10,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8rem;
+    padding-block: 5rem;
 
     .title-container {
         height: fit-content;
@@ -187,6 +187,7 @@ body {
     height: fit-content;
     width: 60rem;
     background: transparent;
+    padding-block: 5rem;
 
     .info-paragraph {
         font-size: 1.2rem;

@@ -249,7 +249,6 @@ footer .footer-contact .form-container button {
 body {
   /* background: linear-gradient(340deg, rgba(21, 145, 234, 1) -25%, rgba(6, 6, 6, 1) 75%); */
   background: linear-gradient(340deg, #755FFF -25%, #181818 75%);
-  /* gap: 5rem; */
 }
 
 .main-container {
@@ -257,6 +256,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8rem;
+  padding-block: 5rem;
 }
 .main-container .title-container {
   height: fit-content;
@@ -414,6 +414,7 @@ body {
   height: fit-content;
   width: 60rem;
   background: transparent;
+  padding-block: 5rem;
 }
 .info-section .info-paragraph {
   font-size: 1.2rem;
