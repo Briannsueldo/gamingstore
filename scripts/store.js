@@ -13,6 +13,7 @@ function createCards (gamesArray) {
     gamesArray.forEach(game => {
         let gameHorizontalCard = document.createElement('div');
         gameHorizontalCard.classList.add('gameHorizontalCard');
+        gameHorizontalCard.setAttribute('id', `${game.id}`);
     
         gameHorizontalCard.innerHTML = `
             <div class="horizontalCardLeft">
@@ -84,6 +85,30 @@ function createCards (gamesArray) {
 createCards(steamGamesInfo);
 
 export { createCards };
+
+function selectedCard () {
+    
+    let gameHorizontalCard = document.querySelectorAll('.gameHorizontalCard');
+
+    gameHorizontalCard.forEach(card => {
+        
+        let cardId = card.getAttribute('id');
+
+        let cardArray = steamGamesInfo.find(card => card.id === cardId);
+
+        card.addEventListener('click', () => {
+
+            localStorage.setItem('selectedGame', JSON.stringify(cardArray));
+
+            if (cardId === cardArray.id) {
+                /* console.log(cardArray.id) */
+                window.location.href = '../pages/game.html';
+            }
+        });
+    });
+};
+
+selectedCard();
 
 
 let gamesInWishlist = JSON.parse(localStorage.getItem("gamesInWishlist")) || [];
