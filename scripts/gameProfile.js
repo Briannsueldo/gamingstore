@@ -6,7 +6,7 @@ profileUpdate();
 
 let gameSelected = JSON.parse(localStorage.getItem('selectedGame'));
 
-console.log(gameSelected);
+/* console.log(gameSelected); */
 
 function createCard () {
     let mainContainer = document.getElementById('store-main-container');
@@ -85,5 +85,16 @@ function createCategories(categoriesContainer) {
         categoriesContainer.appendChild(catBox);
     });
 };
+
+function wishCounter () {
+    let wishStorage = JSON.parse(localStorage.getItem("gamesInWishlist"));
+    let wishNumber = document.querySelector('.wishlist-counter');
+
+    console.log(wishStorage);
+
+    wishNumber.textContent = wishStorage.length;
+}
+
+wishCounter();
 
 createCard();
