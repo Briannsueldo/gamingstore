@@ -1,0 +1,200 @@
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    left: 10%;
+    padding-block: 2rem;
+    background-color: transparent;
+    gap: 2.5rem;
+
+    .header-container {
+        display: flex;
+        border-radius: 0.75rem;
+        background: none;
+
+        img {
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        background-color: #1A1A1A;
+        border-radius: 0.75rem;
+
+        .title-info-container {
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+    
+            .title-container {
+                display: flex;
+                justify-content: space-between;
+                background-color: transparent;
+
+                .game-title {
+                    color: $main-white;
+                    background-color: transparent;
+                }
+
+                .btn-wishlist {
+                    padding: 0.2rem 2rem;
+                    outline: none;
+                    border: 1px solid $darker-blue;
+                    color: $darker-blue;
+                    background: transparent;
+                    border-radius: 0.2rem;
+                    font-weight: 700;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        background: linear-gradient(to right, #755FFF, #C854FF);
+                        color: $main-white;
+                    }
+                }
+            }
+
+            .rating-container {
+                background: transparent;
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+
+                svg {
+                    background: transparent;
+                    color: $main-gray;
+                }
+
+                span {
+                    background: transparent;
+                    color: $main-gray;
+                }
+            }
+        }
+
+        .game-img-specs {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background: transparent;
+
+            .images-container {
+                width: 60%;
+                display: flex;
+
+                .img-main {
+                    display: flex;
+
+                    img {
+                        overflow: hidden;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .specs-container {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                padding-inline: 2rem;
+                background: transparent;
+
+                h4 {
+                    color: $main-white;
+                    background: transparent;
+                }
+
+                .specs-info-dev {
+                    background: transparent;
+
+                    a {
+                        color: $main-gray;
+                        background: transparent;
+                        text-decoration: none;
+                    }
+
+                    span {
+                        color: $main-white;
+                        background: transparent;
+                    }
+                }
+
+                .specs-info-date {
+                    background: transparent;
+
+                    :nth-child(1) {
+                        color: $main-white;
+                        background: transparent;
+                    }
+
+                    :nth-child(2) {
+                        color: $main-gray;
+                        background: transparent;
+                    }
+                }
+
+                .specs-info-cat {
+                    background: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+
+                    .cat-title {
+                        background: transparent;
+                        color: $main-white;
+                    }
+
+                    #categories-container {
+                        background-color: transparent;
+                        display: flex;
+                        width: 100%;
+                        flex-wrap: wrap;
+                        height: fit-content;
+                        gap: 0.5rem;
+
+                        span {
+                            background: linear-gradient(to right, #755FFF, #C854FF);
+                            padding: 0.2rem 1rem;
+                            border-radius: 0.2rem;
+                            color: $main-white;
+                            filter: opacity(0.7);
+                            cursor: pointer;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        .game-description-price {
+            display: flex;
+            width: 100%;
+            background: transparent;
+
+            .game-description-container {
+                width: 60%;
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                h4 {
+                    background: transparent;
+                    color: $main-white;
+                }
+
+                span {
+                    background: transparent;
+                    color: $main-gray;
+                }
+            }
+        }
+    }
+}

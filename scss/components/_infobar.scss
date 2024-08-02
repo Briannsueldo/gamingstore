@@ -1,0 +1,65 @@
+.info-bar {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 3rem;
+    width: 80%;
+    left: 10%;
+    background-color: transparent;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    .info-bar-money {
+        height: 100%;
+        width: 20%;
+        background-color: $main-blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        a {
+            background-color: transparent;
+            color: $main-white;
+        }
+    }
+
+    .info-bar-nav {
+        height: 100%;
+        width: 60%;
+        background: $third-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        a {
+            background-color: transparent;
+            text-decoration: none;
+            color: $main-white;
+        }
+    }
+
+    .info-bar-wishlist {
+        height: 100%;
+        width: 20%;
+        background: linear-gradient(to right, $main-blue, $darker-blue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        gap: 0.5rem;
+        
+        a {
+            background-color: transparent;
+            text-decoration: none;
+            color: $main-white;
+        }
+
+        .wishlist-counter {
+            background-color: transparent;
+            color: $main-gray;
+        }
+    }
+}
