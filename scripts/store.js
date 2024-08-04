@@ -5,6 +5,11 @@ profileUpdate();
 
 import { steamGamesInfo } from './arrays/steamGames.js';
 
+import { wishCounter } from './gameProfile.js';
+
+wishCounter();
+
+
 //
 
 function createCards (gamesArray) {
@@ -105,10 +110,17 @@ function selectedCard () {
                 window.location.href = '../pages/game.html';
             }
         });
+
+        let wishBtn = card.querySelector('.wishlistButton');
+        wishBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
     });
 };
 
 selectedCard();
+
+export { selectedCard };
 
 
 let gamesInWishlist = JSON.parse(localStorage.getItem("gamesInWishlist")) || [];
@@ -162,12 +174,11 @@ let addToWishlist = function () {
                 }
 
                 localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
-                console.log(gamesInWishlist);
 
                 button.addEventListener('mouseover', applyHover);
                 button.addEventListener('mouseout', removeHover);
 
-                wishlistCounter();
+                wishCounter();
             } else {
                 button.textContent = 'Wishlist'
                 game.wishlisted = false;
@@ -182,7 +193,6 @@ let addToWishlist = function () {
                 gamesInWishlist = gamesInWishlist.filter(wishedGame => wishedGame.id !== gameId);
 
                 localStorage.setItem("gamesInWishlist", JSON.stringify(gamesInWishlist));
-                console.log(gamesInWishlist);
 
                 button.removeEventListener('mouseover', applyHover);
                 button.removeEventListener('mouseout', removeHover);
@@ -190,7 +200,7 @@ let addToWishlist = function () {
                 button.style.color = '';
                 button.style.border = '';
 
-                wishlistCounter();
+                wishCounter();
             }
         });
 
@@ -204,24 +214,6 @@ let addToWishlist = function () {
 export { addToWishlist };
 
 addToWishlist();
-
-function wishlistCounter() {
-    let wishlistContainer = document.querySelector('.wishlist-counter');
-
-    if (wishlistContainer) {
-        let wishlistSize = gamesInWishlist.length;
-        localStorage.setItem("wishlistSize", JSON.stringify(wishlistSize));
-        wishlistContainer.textContent = wishlistSize;
-    } else {
-        console.log('No wishlist counter element found.');
-    }
-}
-
-if (window.location.pathname.includes('store.html')) {
-    wishlistCounter();
-}
-
-/* wishlistCounter(); */
 
 // gamesContainer
 let searchGameInput = document.getElementById('search-game-input');
@@ -249,8 +241,6 @@ let searchByName = function () {
 if (window.location.pathname.includes('store.html')) {
     searchByName();
 }
-
-/* searchByName(); */
 
 let categorySelector = document.querySelectorAll('.category-selector');
 
@@ -280,8 +270,6 @@ let filterByCategory = function () {
         });
     });
 };
-
-/* filterByCategory(); */
 
 if (window.location.pathname.includes('store.html')) {
     filterByCategory();

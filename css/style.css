@@ -130,12 +130,19 @@ body {
   flex-direction: row;
   position: relative;
   height: 3rem;
-  width: 80%;
-  left: 10%;
+  width: 100%;
   background-color: transparent;
   gap: 0.5rem;
   font-size: 1.1rem;
   font-weight: 500;
+  padding-inline: 5rem;
+}
+@media screen {
+  .info-bar {
+    max-width: 1500px;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .info-bar .info-bar-money {
   height: 100%;
@@ -741,6 +748,7 @@ body {
 .store-main-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 100%;
   background-color: #3d3d3d;
@@ -749,10 +757,16 @@ body {
 }
 .store-main-container .banner-container {
   position: relative;
-  width: 80%;
-  left: 10%;
   object-fit: content;
   height: fit-content;
+  width: 100%;
+  padding-inline: 5rem;
+  background: transparent;
+}
+@media screen {
+  .store-main-container .banner-container {
+    max-width: 1500px;
+  }
 }
 .store-main-container .banner-container .banner-img {
   width: 100%;
@@ -762,10 +776,16 @@ body {
   display: flex;
   position: relative;
   height: fit-content;
-  width: 80%;
-  left: 10%;
+  width: 100%;
+  padding-inline: 5rem;
+  background: transparent;
   background-color: transparent;
   gap: 0.5rem;
+}
+@media screen {
+  .store-main-container .store-info-container {
+    max-width: 1500px;
+  }
 }
 .store-main-container .store-info-container .store-column-categories {
   width: 20%;
@@ -1025,13 +1045,21 @@ body {
 } */
 .wishlist-section {
   display: flex;
-  width: 50%;
+  position: relative;
+  width: 100%;
+  padding-inline: 5rem;
+  background: transparent;
   height: fit-content;
   background: transparent;
   justify-content: center;
   padding-block: 5rem;
   flex-direction: column;
   gap: 0.5rem;
+}
+@media screen {
+  .wishlist-section {
+    max-width: 1500px;
+  }
 }
 .wishlist-section .wishlist-container {
   background-color: #3d3d3d;
@@ -1221,11 +1249,17 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 80%;
-  left: 10%;
+  width: 100%;
+  padding-inline: 5rem;
   padding-block: 2rem;
   background-color: transparent;
   gap: 2.5rem;
+}
+@media screen {
+  .game-card {
+    max-width: 1500px;
+    justify-content: center;
+  }
 }
 .game-card .header-container {
   display: flex;
@@ -1259,7 +1293,7 @@ body {
   background-color: transparent;
 }
 .game-card .card-info .title-info-container .title-container .btn-wishlist {
-  padding: 0.2rem 2rem;
+  width: 10rem;
   outline: none;
   border: 1px solid #C854FF;
   color: #C854FF;
@@ -1267,6 +1301,7 @@ body {
   border-radius: 0.2rem;
   font-weight: 700;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 .game-card .card-info .title-info-container .title-container .btn-wishlist:hover {
   background: linear-gradient(to right, #755FFF, #C854FF);
@@ -1298,6 +1333,7 @@ body {
 }
 .game-card .card-info .game-img-specs .images-container .img-main {
   display: flex;
+  width: 100%;
 }
 .game-card .card-info .game-img-specs .images-container .img-main img {
   overflow: hidden;
@@ -1363,6 +1399,10 @@ body {
   color: #fbfbfb;
   filter: opacity(0.7);
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.game-card .card-info .game-img-specs .specs-container .specs-info-cat #categories-container span:hover {
+  filter: opacity(1);
 }
 .game-card .card-info .game-description-price {
   display: flex;
@@ -1383,6 +1423,131 @@ body {
 .game-card .card-info .game-description-price .game-description-container span {
   background: transparent;
   color: rgba(245, 245, 245, 0.6352941176);
+}
+.game-card .card-info .game-description-price .game-price-card {
+  padding-inline: 2rem;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 40%;
+  align-items: center;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  width: 11rem;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .initial-price-container {
+  background: transparent;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .initial-price-container .initial-price {
+  color: rgba(245, 245, 245, 0.6352941176);
+  background: transparent;
+  text-decoration: line-through;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .final-price-container {
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .final-price-container .final-price {
+  font-size: 1.5rem;
+  background: transparent;
+  color: #BEEE11;
+  font-weight: 500;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .final-price-container .discount-amount {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #755FFF, #C854FF);
+  color: #fbfbfb;
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .final-price-container-noDiscount {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.game-card .card-info .game-description-price .game-price-card .price-container .final-price-container-noDiscount .final-price {
+  font-size: 1.5rem;
+  background: transparent;
+  color: #BEEE11;
+  font-weight: 500;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: transparent;
+  width: 11rem;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container .buy-btn {
+  padding: 0.6rem;
+  outline: none;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  background: #7FA721;
+  border: 1px solid #1A1A1A;
+  color: #fbfbfb;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container .buy-btn:hover {
+  box-shadow: inset 0px 0px 5px 2px #1A1A1A;
+  text-shadow: 1px 1px 3px #1A1A1A;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container .cart-btn {
+  padding: 0.6rem;
+  outline: none;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  background: transparent;
+  color: #C854FF;
+  border: 1px solid #C854FF;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container .cart-btn:hover {
+  background: #C854FF;
+  color: #fbfbfb;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container .add-library-btn {
+  padding: 0.6rem;
+  outline: none;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  background: #C854FF;
+  color: #fbfbfb;
+  border: 1px solid #1a1a1a;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.game-card .card-info .game-description-price .game-price-card .buttons-container .add-library-btn:hover {
+  box-shadow: inset 0px 0px 5px 2px #1A1A1A;
+  text-shadow: 1px 1px 3px #1A1A1A;
+}
+
+.removeGame {
+  border: 1px solid #d64242;
+  color: #d64242;
+  width: 10rem;
+  outline: none;
+  background: transparent;
+  border-radius: 0.2rem;
+  font-weight: 700;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.removeGame:hover {
+  color: #fbfbfb;
+  background: #d64242;
 }
 
 /*# sourceMappingURL=style.css.map */

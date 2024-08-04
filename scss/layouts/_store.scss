@@ -2,6 +2,7 @@
 .store-main-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color: $second-gray;
@@ -12,10 +13,15 @@
 
     .banner-container {
         position: relative;
-        width: 80%;
-        left: 10%;
         object-fit: content;
         height: fit-content;
+        width: 100%;
+        padding-inline: 5rem;
+        background: transparent;
+
+        @media screen {
+            max-width: 1500px;
+        }
 
         .banner-img {
             width: 100%;
@@ -27,10 +33,15 @@
         display: flex;
         position: relative;
         height: fit-content;
-        width: 80%;
-        left: 10%;
+        width: 100%;
+        padding-inline: 5rem;
+        background: transparent;
         background-color: transparent;
         gap: 0.5rem;
+
+        @media screen {
+            max-width: 1500px;
+        }
 
         .store-column-categories {
             width: 20%;

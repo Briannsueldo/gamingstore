@@ -3,12 +3,18 @@
     flex-direction: row;
     position: relative;
     height: 3rem;
-    width: 80%;
-    left: 10%;
+    width: 100%;
     background-color: transparent;
     gap: 0.5rem;
     font-size: 1.1rem;
     font-weight: 500;
+    padding-inline: 5rem;
+
+    @media screen {
+        max-width: 1500px;
+        align-items: center;
+        justify-content: center;
+    }
 
     .info-bar-money {
         height: 100%;

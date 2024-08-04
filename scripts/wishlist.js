@@ -2,6 +2,7 @@ import { steamGamesInfo } from './arrays/steamGames.js';
 import { profileUpdate } from './profileUpdate.js';
 import { createCards } from './store.js';
 import { addToWishlist } from './store.js';
+import { selectedCard } from './store.js';
 
 profileUpdate();
 
@@ -50,3 +51,5 @@ function deleteCard () {
 }
 
 deleteCard();
+
+selectedCard();

@@ -3,11 +3,16 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 80%;
-    left: 10%;
+    width: 100%;
+    padding-inline: 5rem;
     padding-block: 2rem;
     background-color: transparent;
     gap: 2.5rem;
+
+    @media screen {
+        max-width: 1500px;
+        justify-content: center;
+    };
 
     .header-container {
         display: flex;
@@ -44,7 +49,7 @@
                 }
 
                 .btn-wishlist {
-                    padding: 0.2rem 2rem;
+                    width: 10rem;
                     outline: none;
                     border: 1px solid $darker-blue;
                     color: $darker-blue;
@@ -52,6 +57,7 @@
                     border-radius: 0.2rem;
                     font-weight: 700;
                     transition: 0.2s ease-in-out;
+                    cursor: pointer;
 
                     &:hover {
                         background: linear-gradient(to right, #755FFF, #C854FF);
@@ -90,6 +96,7 @@
 
                 .img-main {
                     display: flex;
+                    width: 100%;
 
                     img {
                         overflow: hidden;
@@ -166,6 +173,11 @@
                             color: $main-white;
                             filter: opacity(0.7);
                             cursor: pointer;
+                            transition: 0.2s ease-in-out;
+
+                            &:hover {
+                                filter: opacity(1);
+                            }
                         }
                     }
                     
@@ -195,6 +207,148 @@
                     color: $main-gray;
                 }
             }
+
+            .game-price-card {
+                padding-inline: 2rem;
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 40%;
+                align-items: center;
+
+                .price-container {
+                    display: flex;
+                    flex-direction: column;
+                    background: transparent;
+                    width: 11rem;
+                    
+                    .initial-price-container {
+                        background: transparent;
+
+                        .initial-price {
+                            color: $main-gray;
+                            background: transparent;
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .final-price-container {
+                        background: transparent;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 2rem;
+
+                        .final-price {
+                            font-size: 1.5rem;
+                            background: transparent;
+                            color: #BEEE11;
+                            font-weight: 500;
+                        }
+
+                        .discount-amount {
+                            font-size: 1rem;
+                            display: flex;
+                            align-items: center;
+                            background: linear-gradient(to right, #755FFF, #C854FF);
+                            color: $main-white;
+                            font-weight: 600;
+                            padding: 0.3rem 0.5rem;
+                            border-radius: 0.2rem;
+                        }
+                    }
+
+                    .final-price-container-noDiscount {
+                        background: transparent;
+                        display: flex;
+                        justify-content: center;
+                        gap: 2rem;
+
+                        .final-price {
+                            font-size: 1.5rem;
+                            background: transparent;
+                            color: #BEEE11;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                .buttons-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    background: transparent;
+                    width: 11rem;
+
+                    .buy-btn {
+                        padding: .6rem;
+                        outline: none;
+                        border-radius: .2rem;
+                        font-weight: 500;
+                        background: #7FA721;
+                        border: 1px solid #1A1A1A;
+                        color: $main-white;
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: inset 0px 0px 5px 2px #1A1A1A;
+                            text-shadow: 1px 1px 3px #1A1A1A;
+                        }
+                    }
+
+                    .cart-btn {
+                        padding: .6rem;
+                        outline: none;
+                        border-radius: .2rem;
+                        font-weight: 500;
+                        background: transparent;
+                        color: $darker-blue;
+                        border: 1px solid $darker-blue;
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: $darker-blue;
+                            color: $main-white;
+                        }
+                    }
+
+                    .add-library-btn {
+                        padding: 0.6rem;
+                        outline: none;
+                        border-radius: .2rem;
+                        font-weight: 500;
+                        background: $darker-blue;
+                        color: $main-white;
+                        border: 1px solid #1a1a1a;
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: inset 0px 0px 5px 2px #1A1A1A;
+                            text-shadow: 1px 1px 3px #1A1A1A;
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+.removeGame {
+    border: 1px solid #d64242;
+    color: #d64242;
+    width: 10rem;
+    outline: none;
+    background: transparent;
+    border-radius: 0.2rem;
+    font-weight: 700;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+        color: $main-white;
+        background: #d64242;
     }
 }

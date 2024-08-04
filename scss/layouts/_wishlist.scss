@@ -4,13 +4,20 @@
 
 .wishlist-section {
     display: flex;
-    width: 50%;
+    position: relative;
+    width: 100%;
+    padding-inline: 5rem;
+    background: transparent;
     height: fit-content;
     background: transparent;
     justify-content: center;
     padding-block: 5rem;
     flex-direction: column;
     gap: 0.5rem;
+
+    @media screen {
+        max-width: 1500px;
+    }
 
     .wishlist-container {
         background-color: #3d3d3d;
