@@ -5,7 +5,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: $second-gray;
+    background-color: #101010;
     padding-block: 2.5rem;
     gap: 0.5rem;
 
@@ -26,6 +26,7 @@
         .banner-img {
             width: 100%;
             display: flex;
+            border-radius: 0.25rem;
         }
     }
 
@@ -44,12 +45,63 @@
         }
 
         .store-column-categories {
-            width: 20%;
+            width: 30%;
             height: fit-content;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             background-color: #3d3d3d;
+
+            .format-btn-container {
+                display: flex;
+                width: 100%;
+                height: 2.5rem;
+                justify-content: space-around;
+                background: transparent;
+                gap: 0.5rem;
+
+                #btn-horizontal {
+                    width: 50%;
+                    border: 1px;
+                    border-radius: 0.25rem;
+                    background: transparent;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.2s ease-in-out;
+                    background: linear-gradient(to right, #755FFF, #C854FF);
+                    filter: opacity(0.8);
+
+                    svg {
+                        background: transparent;
+                        color: $main-white;
+                        height: 1.8rem;
+                        width: 1.8rem;
+                    }
+                    
+                }
+
+                #btn-vertical {
+                    width: 50%;
+                    border: 1px;
+                    border-radius: 0.25rem;
+                    background: transparent;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.2s ease-in-out;
+                    background: linear-gradient(to right, #755FFF, #C854FF);
+                    filter: opacity(0.8);
+
+                    svg {
+                        background: transparent;
+                        color: $main-white;
+                        height: 1.8rem;
+                        width: 1.8rem;
+                    }
+                      
+                }
+            }
 
             .categories-container {
                 display: flex;
@@ -89,7 +141,7 @@
                 #search-game-input {
                     width: 80%;
                     border: 1px solid $main-dark;
-                    border-radius: 0.1rem 0 0 0.1rem;
+                    border-radius: 0.25rem 0 0 0.25rem;
                     outline: none;
                     padding: 0.5rem;
                     background: $second-gray;
@@ -104,7 +156,7 @@
                     align-items: center;
                     border: 1px solid $main-dark;
                     border-left: none;
-                    border-radius: 0 0.1rem 0.1rem 0;
+                    border-radius: 0 0.25rem 0.25rem 0;
                     width: 20%;
                     cursor: pointer;
                     background-color: $second-gray;
@@ -122,7 +174,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            width: 60%;
+            width: 100%;
             height: fit-content;
             background-color: transparent;
 
@@ -138,6 +190,9 @@
                     display: flex;
                     background-color: transparent;
                     transition: 0.2s ease-in-out;
+                    border-radius: 0.25rem;
+                    overflow: hidden;
+                    background: #1A1A1A;
 
                     &:hover {
                         box-shadow: 5px 5px 4px 0px;
@@ -249,7 +304,7 @@
                                 .buttonsContainer {
                                     width: 100%;
                                     display: flex;
-                                    justify-content: center;
+                                    justify-content: end;
                                     gap: 0.5rem;
                                     background: transparent;
     
@@ -331,4 +386,24 @@
 .category-selected {
     scale: 1.07;
     background: linear-gradient(to right, $main-blue, $darker-blue);
+}
+
+.gamesContainer-quad-distribution {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-quad-distribution {
+    flex-direction: column;
+    flex-basis: calc(50% - .25rem);
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.btn-mode-colored {
+    filter: opacity(1) !important;
+    scale: 1.02;
 }

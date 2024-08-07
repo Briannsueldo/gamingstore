@@ -152,6 +152,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-radius: 0.25rem;
 }
 .info-bar .info-bar-money a {
   background-color: transparent;
@@ -165,6 +166,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  border-radius: 0.25rem;
 }
 .info-bar .info-bar-nav a {
   background-color: transparent;
@@ -180,6 +182,7 @@ body {
   align-items: center;
   cursor: pointer;
   gap: 0.5rem;
+  border-radius: 0.25rem;
 }
 .info-bar .info-bar-wishlist a {
   background-color: transparent;
@@ -751,7 +754,7 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #3d3d3d;
+  background-color: #101010;
   padding-block: 2.5rem;
   gap: 0.5rem;
 }
@@ -771,6 +774,7 @@ body {
 .store-main-container .banner-container .banner-img {
   width: 100%;
   display: flex;
+  border-radius: 0.25rem;
 }
 .store-main-container .store-info-container {
   display: flex;
@@ -788,12 +792,56 @@ body {
   }
 }
 .store-main-container .store-info-container .store-column-categories {
-  width: 20%;
+  width: 30%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   background-color: #3d3d3d;
+}
+.store-main-container .store-info-container .store-column-categories .format-btn-container {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  justify-content: space-around;
+  background: transparent;
+  gap: 0.5rem;
+}
+.store-main-container .store-info-container .store-column-categories .format-btn-container #btn-horizontal {
+  width: 50%;
+  border: 1px;
+  border-radius: 0.25rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  background: linear-gradient(to right, #755FFF, #C854FF);
+  filter: opacity(0.8);
+}
+.store-main-container .store-info-container .store-column-categories .format-btn-container #btn-horizontal svg {
+  background: transparent;
+  color: #fbfbfb;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.store-main-container .store-info-container .store-column-categories .format-btn-container #btn-vertical {
+  width: 50%;
+  border: 1px;
+  border-radius: 0.25rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  background: linear-gradient(to right, #755FFF, #C854FF);
+  filter: opacity(0.8);
+}
+.store-main-container .store-info-container .store-column-categories .format-btn-container #btn-vertical svg {
+  background: transparent;
+  color: #fbfbfb;
+  height: 1.8rem;
+  width: 1.8rem;
 }
 .store-main-container .store-info-container .store-column-categories .categories-container {
   display: flex;
@@ -830,7 +878,7 @@ body {
 .store-main-container .store-info-container .store-column-categories .search-container #search-game-input {
   width: 80%;
   border: 1px solid #181818;
-  border-radius: 0.1rem 0 0 0.1rem;
+  border-radius: 0.25rem 0 0 0.25rem;
   outline: none;
   padding: 0.5rem;
   background: #3d3d3d;
@@ -844,7 +892,7 @@ body {
   align-items: center;
   border: 1px solid #181818;
   border-left: none;
-  border-radius: 0 0.1rem 0.1rem 0;
+  border-radius: 0 0.25rem 0.25rem 0;
   width: 20%;
   cursor: pointer;
   background-color: #3d3d3d;
@@ -857,7 +905,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 60%;
+  width: 100%;
   height: fit-content;
   background-color: transparent;
 }
@@ -873,6 +921,9 @@ body {
   display: flex;
   background-color: transparent;
   transition: 0.2s ease-in-out;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background: #1A1A1A;
 }
 .store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard:hover {
   box-shadow: 5px 5px 4px 0px;
@@ -973,7 +1024,7 @@ body {
 .store-main-container .store-info-container .store-column-search .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   gap: 0.5rem;
   background: transparent;
 }
@@ -1038,6 +1089,26 @@ body {
 .category-selected {
   scale: 1.07;
   background: linear-gradient(to right, #755FFF, #C854FF);
+}
+
+.gamesContainer-quad-distribution {
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-quad-distribution {
+  flex-direction: column;
+  flex-basis: calc(50% - 0.25rem);
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.btn-mode-colored {
+  filter: opacity(1) !important;
+  scale: 1.02;
 }
 
 /* body {

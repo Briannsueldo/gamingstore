@@ -40,7 +40,6 @@ function createCards (gamesArray) {
                 <div class="buttonsAlertsContainer">
                     <div class="addAnimationContainer"></div>
                     <div class="buttonsContainer">
-                        <button class="addLibraryButton">Add to library</button>
                         <button class="wishlistButton" id="${game.id}">Wishlist</button>
                     </div>
                 </div>
@@ -56,7 +55,6 @@ function createCards (gamesArray) {
                 <div class="buttonsAlertsContainer">
                     <div class="addAnimationContainer"></div>
                     <div class="buttonsContainer">
-                        <button class="cartButton">Add to cart</button>
                         <button class="wishlistButton" id="${game.id}">Wishlist</button>
                     </div>
                 </div>
@@ -75,7 +73,6 @@ function createCards (gamesArray) {
                 <div class="buttonsAlertsContainer">
                     <div class="addAnimationContainer"></div>
                     <div class="buttonsContainer">
-                        <button class="cartButton">Add to cart</button>
                         <button class="wishlistButton" id="${game.id}">Wishlist</button>
                     </div>
                 </div>
@@ -221,20 +218,26 @@ let searchGameButton = document.getElementById('search-game-button');
 let gameName = document.querySelectorAll('.gameName');
 let gameCards = document.querySelectorAll('.gameHorizontalCard');
 
-let searchByName = function () {
-    searchGameButton.addEventListener('click', () => {
-        
-        let search = searchGameInput.value.toLowerCase();
+function searchByName() {
+    searchGameButton.addEventListener('click', executeSearch);
+    searchGameInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            executeSearch();
+        };
+    }); 
+};
 
-        gameName.forEach((game, index) => {
-            let gameText = game.textContent.toLowerCase();
+function executeSearch() {
+    let search = searchGameInput.value.toLowerCase();
 
-            if(gameText.includes(search)) {
-                gameCards[index].style.display = 'flex';
-            } else {
-                gameCards[index].style.display = 'none';
-            };
-        });
+    gameName.forEach((game, index) => {
+        let gameText = game.textContent.toLowerCase();
+
+        if(gameText.includes(search)) {
+            gameCards[index].style.display = 'flex';
+        } else {
+            gameCards[index].style.display = 'none';
+        };
     });
 };
 
@@ -274,3 +277,67 @@ let filterByCategory = function () {
 if (window.location.pathname.includes('store.html')) {
     filterByCategory();
 }
+
+function vertical() {
+    let btnVertical = document.getElementById('btn-vertical');
+    let btnHorizontal = document.getElementById('btn-horizontal');
+    
+    btnVertical.addEventListener('click', ()=> {
+        btnVertical.classList.add('btn-mode-colored');
+        btnHorizontal.classList.remove('btn-mode-colored');
+        let cards = document.querySelectorAll('.gameHorizontalCard');
+        let gamesContainer = document.querySelector('.games-container');
+
+        gamesContainer.classList.add('gamesContainer-quad-distribution');
+
+        
+        cards.forEach(card => {
+            card.classList.add('card-quad-distribution');
+
+            let leftCard = document.querySelectorAll('.horizontalCardLeft');
+            let rightCard = document.querySelectorAll('.horizontalCardRight');
+
+            leftCard.forEach(card => {
+                card.classList.add('full-width');
+            })
+    
+            rightCard.forEach(card => {
+                card.classList.add('full-width');
+            })
+        })
+    });
+}
+
+function horizontal() {
+    let btnHorizontal = document.getElementById('btn-horizontal');
+    let btnVertical = document.getElementById('btn-vertical');
+
+    btnHorizontal.addEventListener('click', ()=> {
+        btnHorizontal.classList.add('btn-mode-colored');
+        btnVertical.classList.remove('btn-mode-colored');
+        let cards = document.querySelectorAll('.gameHorizontalCard');
+        let gamesContainer = document.querySelector('.games-container');
+
+        gamesContainer.classList.add('games-container');
+        gamesContainer.classList.remove('gamesContainer-quad-distribution');
+
+        cards.forEach(card => {
+            card.classList.remove('card-quad-distribution');
+
+            let leftCard = document.querySelectorAll('.horizontalCardLeft');
+            let rightCard = document.querySelectorAll('.horizontalCardRight');
+
+            leftCard.forEach(card => {
+                card.classList.remove('full-width');
+            })
+    
+            rightCard.forEach(card => {
+                card.classList.remove('full-width');
+            })
+        })
+    });
+}
+
+horizontal();
+
+vertical();
