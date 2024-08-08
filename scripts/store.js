@@ -84,9 +84,9 @@ function createCards (gamesArray) {
     });
 }
 
-createCards(steamGamesInfo);
-
 export { createCards };
+
+createCards(steamGamesInfo);
 
 function selectedCard () {
     
@@ -338,6 +338,8 @@ function horizontal() {
     });
 }
 
-horizontal();
+document.addEventListener('DOMContentLoaded', horizontal);
 
-vertical();
+document.addEventListener('DOMContentLoaded', vertical);
+
+

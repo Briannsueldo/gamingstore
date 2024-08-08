@@ -15,6 +15,10 @@ profile.querySelector('h2').textContent = userInfo[0].nickname;
 
 let gamesInWishlist = JSON.parse(localStorage.getItem("gamesInWishlist"));
 
+let gamesContainer = document.querySelector('.games-container');
+
+gamesContainer.innerHTML = '';
+
 createCards(gamesInWishlist);
 
 addToWishlist();
