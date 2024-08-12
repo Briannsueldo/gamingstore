@@ -186,7 +186,135 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     createCard();
-});
 
+    function pricePerCountry() {
+        let userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+        let userCountry = (userInfo[0].countryName).toLowerCase();
+
+        let initialPrice = document.querySelector('.initial-price');
+        let finalPrice = document.querySelector('.final-price');
+
+        if (userCountry === 'argentina' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://dolarapi.com/v1/dolares/cripto")
+              .then(response => response.json())
+              .then(data => {
+
+                if(gameSelected.discountStatus.discount_active === true) {
+                    initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.venta).toFixed(1)} ARS`;
+                    finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.venta).toFixed(1)} ARS`;
+                } else {
+                    finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.venta).toFixed(1)} ARS`;
+                }
+            });
+        }
+
+        if (userCountry === 'chile' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://cl.dolarapi.com/v1/cotizaciones/usd")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.venta).toFixed(1)} CLP`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.venta).toFixed(1)} CLP`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.venta).toFixed(1)} CLP`;
+                    }
+                });
+        }
+
+        if (userCountry === 'uruguay' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://uy.dolarapi.com/v1/cotizaciones/usd")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.venta).toFixed(1)} UYU`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.venta).toFixed(1)} UYU`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.venta).toFixed(1)} UYU`;
+                    }
+                });
+        }
+
+        if (userCountry === 'brazil' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://criptoya.com/api/USDT/BRL/1")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.binance.ask).toFixed(1)} BRL`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.binance.ask).toFixed(1)} BRL`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.binance.ask).toFixed(1)} BRL`;
+                    }
+                });
+        }
+
+        if (userCountry === 'bolivia' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://bo.dolarapi.com/v1/dolares/oficial")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.venta).toFixed(1)} BOB`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.venta).toFixed(1)} BOB`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.venta).toFixed(1)} BOB`;
+                    }
+                });
+        }
+
+        if (userCountry === 'colombia' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://criptoya.com/api/USDT/COP/1")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.ripio.ask).toFixed(1)} COP`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.ripio.ask).toFixed(1)} COP`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.ripio.ask).toFixed(1)} COP`;
+                    }
+                });
+        }
+
+        if (userCountry === 'mexico' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://mx.dolarapi.com/v1/cotizaciones/usd")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.venta).toFixed(1)} MXN`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.venta).toFixed(1)} MXN`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.venta).toFixed(1)} MXN`;
+                    }
+                });
+        }
+
+        if (userCountry === 'peru' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://criptoya.com/api/USDT/PEN/1")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.buenbit.ask).toFixed(1)} PEN`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.buenbit.ask).toFixed(1)} PEN`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.buenbit.ask).toFixed(1)} PEN`;
+                    }
+                });
+        }
+
+        if (userCountry === 'paraguay' && gameSelected.priceStatus.is_free === false) {
+            fetch("https://criptoya.com/api/USDT/PYG/1")
+                .then(response => response.json())
+                .then(data => {
+                    if(gameSelected.discountStatus.discount_active === true) {
+                        initialPrice.textContent = `$${(gameSelected.priceStatus.price * data.binancep2p.ask).toFixed(1)} PYG`;
+                        finalPrice.textContent = `$${((((gameSelected.priceStatus.price) * (100 - gameSelected.discountStatus.discount_amount)) / 100) * data.binancep2p.ask).toFixed(1)} PYG`;
+                    } else {
+                        finalPrice.textContent = `$${((gameSelected.priceStatus.price) * data.binancep2p.ask).toFixed(1)} PYG`;
+                    }
+                });
+        }
+    }
+
+    pricePerCountry();
+});
 
 
