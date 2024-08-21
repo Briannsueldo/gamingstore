@@ -5,7 +5,7 @@ profileUpdate();
 //
 
 function wishCounter () {
-    let wishStorage = JSON.parse(localStorage.getItem("gamesInWishlist"));
+    let wishStorage = JSON.parse(localStorage.getItem("gamesInWishlist")) || [];
     let wishNumber = document.querySelector('.wishlist-counter');
 
     wishNumber.textContent = wishStorage.length;

@@ -209,19 +209,19 @@
             }
 
             .game-price-card {
-                padding-inline: 2rem;
+                padding-left: 2rem;
                 background: transparent;
                 display: flex;
                 flex-direction: column;
                 gap: 1.5rem;
                 width: 40%;
-                align-items: center;
+                align-items: end;
 
                 .price-container {
                     display: flex;
                     flex-direction: column;
                     background: transparent;
-                    width: 11rem;
+                    width: 16rem;
                     
                     .initial-price-container {
                         background: transparent;
@@ -278,7 +278,7 @@
                     flex-direction: column;
                     gap: 1.5rem;
                     background: transparent;
-                    width: 11rem;
+                    width: 16rem;
 
                     .buy-btn {
                         padding: .6rem;

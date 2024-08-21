@@ -36,6 +36,7 @@
                 padding: 1.4rem;
                 background-color: $third-dark;
                 width: 8rem;
+                z-index: 2;
 
                 a {
                     text-decoration: none;
@@ -74,6 +75,11 @@
                         text-align: center;
                         font-size: 1rem;
                         list-style: none;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: $main-blue;
+                        }
                     }
                 }
 
@@ -86,6 +92,10 @@
         width: fit-content;
         height: fit-content;
         background: transparent;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         
 
         #profile-container {
@@ -96,8 +106,9 @@
             padding: .5rem;
             gap: .5rem;
             background-color: #32353c;
-            border-radius: .2rem;
+            border-radius: .25rem;
             display: none;
+            z-index: 2;
 
             .profile-img {
                 height: 2.5rem;
@@ -113,6 +124,67 @@
             #profileMenuArrow {
                 background: transparent;
                 color: $main-white;
+            }
+        }
+
+        .btn-logout {
+            width: 100%;
+            height: 2.5rem;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            background-color: #32353c;
+            bottom: 0;
+            border-radius: 0.25rem;
+            justify-content: center;
+            gap: 0.5rem;
+
+            span {
+                font-size: 1rem;
+                font-weight: 500;
+                background: transparent;
+                color: $main-white;
+            }
+
+            svg {
+                background: transparent;
+                color: $main-blue;
+            }
+
+            &:hover {
+                span {
+                    color: $warning;
+                }
+
+                svg {
+                    color: $warning;
+                }
+            }
+        }
+
+        .goDownAnimation {
+            animation: goDown .15s linear forwards;
+        }
+
+        .goUpAnimation {
+            animation: goUp .15s linear forwards;
+        }
+
+        @keyframes goDown {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(48px);
+            }
+        }
+
+        @keyframes goUp {
+            0% {
+                transform: translateY(48px);
+            }
+            100% {
+                transform: translateY(0px);
             }
         }
     }

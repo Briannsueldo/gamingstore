@@ -66,16 +66,14 @@ function firstFormSubmit(submit) {
     let selectedCountryName = countrySelector.querySelector("span").textContent;
     let selectedCountryFlag = countrySelector.querySelector("img").getAttribute("src");
 
-    let userInfo = [
-        {
-            name: nameField.value,
-            lastName: lastnameField.value,
-            email: emailAddressField.value,
-            password: passwordField.value,
-            countryName: selectedCountryName,
-            countryFlag: selectedCountryFlag,
-        },
-    ];
+    let userInfo = JSON.parse(localStorage.getItem('userInfo'))
+
+    userInfo[0].name = nameField.value;
+    userInfo[0].lastName = lastnameField.value;
+    userInfo[0].email = emailAddressField.value;
+    userInfo[0].password = passwordField.value;
+    userInfo[0].countryName = selectedCountryName;
+    userInfo[0].countryFlag = selectedCountryFlag;
 
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
 

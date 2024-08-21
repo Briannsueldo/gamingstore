@@ -58,6 +58,7 @@ body {
   padding: 1.4rem;
   background-color: #212121;
   width: 8rem;
+  z-index: 2;
 }
 .navBar .menu-container .menu-list-container .menu-item a {
   text-decoration: none;
@@ -94,11 +95,19 @@ body {
   text-align: center;
   font-size: 1rem;
   list-style: none;
+  cursor: pointer;
+}
+.navBar .menu-container .menu-list-container .menu-item .dropdown-menu li:hover {
+  background: #755FFF;
 }
 .navBar .profile-menu-container {
   width: fit-content;
   height: fit-content;
   background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .navBar .profile-menu-container #profile-container {
   height: 3.5rem;
@@ -108,8 +117,9 @@ body {
   padding: 0.5rem;
   gap: 0.5rem;
   background-color: #32353c;
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   display: none;
+  z-index: 2;
 }
 .navBar .profile-menu-container #profile-container .profile-img {
   height: 2.5rem;
@@ -123,6 +133,56 @@ body {
 .navBar .profile-menu-container #profile-container #profileMenuArrow {
   background: transparent;
   color: #fbfbfb;
+}
+.navBar .profile-menu-container .btn-logout {
+  width: 100%;
+  height: 2.5rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #32353c;
+  bottom: 0;
+  border-radius: 0.25rem;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.navBar .profile-menu-container .btn-logout span {
+  font-size: 1rem;
+  font-weight: 500;
+  background: transparent;
+  color: #fbfbfb;
+}
+.navBar .profile-menu-container .btn-logout svg {
+  background: transparent;
+  color: #755FFF;
+}
+.navBar .profile-menu-container .btn-logout:hover span {
+  color: #da1e28;
+}
+.navBar .profile-menu-container .btn-logout:hover svg {
+  color: #da1e28;
+}
+.navBar .profile-menu-container .goDownAnimation {
+  animation: goDown 0.15s linear forwards;
+}
+.navBar .profile-menu-container .goUpAnimation {
+  animation: goUp 0.15s linear forwards;
+}
+@keyframes goDown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(48px);
+  }
+}
+@keyframes goUp {
+  0% {
+    transform: translateY(48px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .info-bar {
@@ -389,9 +449,15 @@ body {
   height: fit-content;
   width: 25%;
   background: transparent;
+  width: 25%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
 }
 .main-container .stepbystep-container .step-container .step-1 {
-  padding: 1rem;
   text-align: center;
   border-radius: 0.375rem;
   background-color: #1591EA;
@@ -399,16 +465,23 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
-  height: 53px;
+  height: 3.3rem;
 }
 .main-container .stepbystep-container .step-container .step-1 a {
   text-decoration: none;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
 }
 .main-container .stepbystep-container .step-container .step-1 a h4 {
   color: #fbfbfb;
   background: transparent;
   font-weight: 600;
   font-size: 0.9rem;
+  text-shadow: 1px 1px 2px #212121;
 }
 .main-container .stepbystep-container .step-container .step-2 {
   padding: 1rem;
@@ -423,17 +496,20 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
-  height: 53px;
+  height: 3.3rem;
 }
 .main-container .stepbystep-container .step-container .step-2 h4 {
   color: #fbfbfb;
   background: transparent;
   font-weight: 600;
   font-size: 0.9rem;
+  text-shadow: 1px 1px 2px #212121;
 }
 .main-container .stepbystep-container .step-container .step-2 svg {
   color: #fbfbfb;
   background: transparent;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 .main-container .stepbystep-container .step-container .step-3 {
   width: 100%;
@@ -460,6 +536,58 @@ body {
 .main-container .stepbystep-container .step-container .step-3 .step-3-item h4 {
   background: transparent;
   font-weight: 500;
+  text-shadow: 1px 1px 2px #212121;
+}
+.main-container .stepbystep-container #tutorial-step-2 {
+  flex-direction: column;
+  height: fit-content;
+  gap: 1rem;
+}
+.main-container .stepbystep-container #tutorial-step-2 .systemList {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  background: #212121;
+}
+.main-container .stepbystep-container #tutorial-step-2 .systemList .systemItem {
+  height: 3.3rem;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: #fbfbfb;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.main-container .stepbystep-container #tutorial-step-2 .systemList .systemItem:hover {
+  background-color: #1591EA;
+}
+.main-container .stepbystep-container #tutorial-step-2 .systemList .systemItem svg {
+  background-color: transparent;
+  color: #fbfbfb;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.main-container .stepbystep-container #tutorial-step-2 .systemList .systemItem h4 {
+  background: transparent;
+}
+.main-container .stepbystep-container #tutorial-step-2 .systemList .system-selected {
+  background-color: #1591EA;
+}
+.main-container .stepbystep-container #tutorial-step-2 .system-show {
+  display: flex;
+}
+.main-container .stepbystep-container .fix-position-showed {
+  position: relative;
+  top: 5.25rem;
 }
 .main-container .stepbystep-container .svg-container {
   width: 15%;
@@ -510,6 +638,34 @@ body {
 .info-section .info-items-container .info-items span {
   background: none;
   color: #fbfbfb;
+}
+
+.driver-overlay {
+  opacity: 0.2;
+}
+.driver-overlay path {
+  fill: #212121 !important;
+}
+
+.driver-popover .driver-popover-title {
+  font-family: "Inter thight", sans-serif;
+  color: #181818;
+}
+.driver-popover .driver-popover-arrow {
+  background: transparent;
+}
+.driver-popover .driver-popover-close-btn {
+  color: #1591EA;
+}
+.driver-popover .driver-popover-footer .driver-popover-navigation-btns .driver-popover-next-btn {
+  background-color: #1591EA;
+  color: #fbfbfb;
+  text-shadow: none;
+  border: 1px solid #1591EA;
+}
+.driver-popover .driver-popover-footer .driver-popover-navigation-btns .driver-popover-prev-btn {
+  text-shadow: none;
+  border: 1px solid rgba(21, 145, 234, 0.6980392157);
 }
 
 .register-main-container {
@@ -797,7 +953,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: #3d3d3d;
+  background-color: transparent;
 }
 .store-main-container .store-info-container .store-column-categories .format-btn-container {
   display: flex;
@@ -818,6 +974,7 @@ body {
   transition: 0.2s ease-in-out;
   background: linear-gradient(to right, #755FFF, #C854FF);
   filter: opacity(0.8);
+  cursor: pointer;
 }
 .store-main-container .store-info-container .store-column-categories .format-btn-container #btn-horizontal svg {
   background: transparent;
@@ -836,6 +993,7 @@ body {
   transition: 0.2s ease-in-out;
   background: linear-gradient(to right, #755FFF, #C854FF);
   filter: opacity(0.8);
+  cursor: pointer;
 }
 .store-main-container .store-info-container .store-column-categories .format-btn-container #btn-vertical svg {
   background: transparent;
@@ -850,14 +1008,16 @@ body {
   gap: 0.5rem;
   padding: 0.5rem;
   align-items: start;
-  background-color: rgba(33, 33, 33, 0.3647058824);
+  background-color: #212121;
+  border-radius: 0.25rem;
 }
 .store-main-container .store-info-container .store-column-categories .categories-container .category-selector {
   list-style: none;
   width: 100%;
-  background-color: #181818;
+  background-color: #101010;
   padding: 0.2rem;
   transition: 0.2s ease-in-out;
+  border-radius: 0.25rem;
 }
 .store-main-container .store-info-container .store-column-categories .categories-container .category-selector a {
   display: flex;
@@ -873,7 +1033,8 @@ body {
   height: 2.5rem;
   width: 100%;
   justify-content: end;
-  background-color: #3d3d3d;
+  background-color: #212121;
+  border-radius: 0.25rem;
 }
 .store-main-container .store-info-container .store-column-categories .search-container #search-game-input {
   width: 80%;
@@ -896,10 +1057,14 @@ body {
   width: 20%;
   cursor: pointer;
   background-color: #3d3d3d;
+  transition: 0.2s ease-in-out;
 }
 .store-main-container .store-info-container .store-column-categories .search-container #search-game-button svg {
-  background-color: #3d3d3d;
+  background-color: transparent;
   fill: #fbfbfb;
+}
+.store-main-container .store-info-container .store-column-categories .search-container #search-game-button:hover {
+  background: linear-gradient(to right, #755FFF, #C854FF);
 }
 .store-main-container .store-info-container .store-column-search {
   display: flex;
@@ -1050,6 +1215,8 @@ body {
   background: transparent;
   color: #755FFF;
   font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 .store-main-container .store-info-container .store-column-data {
   display: flex;
@@ -1133,19 +1300,25 @@ body {
   }
 }
 .wishlist-section .wishlist-container {
-  background-color: #3d3d3d;
+  background-color: #212121;
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  height: 6rem;
+  height: 15rem;
+  border-radius: 0.25rem;
 }
 .wishlist-section .wishlist-container .profile-wishlist {
   display: flex;
-  flex-direction: row;
-  height: 5rem;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0.5rem;
   background-color: transparent;
+  align-items: center;
+}
+.wishlist-section .wishlist-container .profile-wishlist .profile-image {
+  width: 10rem;
+  border-radius: 100%;
+  border: 2px solid #755FFF;
 }
 .wishlist-section .wishlist-container .profile-wishlist .profile-nickname {
   background: transparent;
@@ -1154,34 +1327,28 @@ body {
   display: flex;
   align-items: center;
 }
-.wishlist-section .wishlist-container .input-container {
-  height: 5rem;
+.wishlist-section .wishlist-container .chart-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: transparent;
-  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
-.wishlist-section .wishlist-container .input-container .input-wishlist {
-  height: 2rem;
-  border: 1px solid #181818;
-  outline: none;
-  display: flex;
-  padding: 0.5rem;
-  background-color: transparent;
-  box-shadow: inset 0px 0px 5px 2px #181818;
+.wishlist-section .wishlist-container .chart-container h4 {
+  align-self: center;
+  background: transparent;
   color: #fbfbfb;
+  font-size: 1.5rem;
 }
-.wishlist-section .wishlist-container .input-container .search-game-wishlist {
-  height: 2rem;
-  border: 1px solid #181818;
-  border-left: none;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  padding-inline: 0.5rem 0.5rem;
-  color: #755FFF;
+.wishlist-section .wishlist-container .chart-container .doughnut-container {
+  width: 10rem;
+  height: 10rem;
 }
-.wishlist-section .wishlist-container .input-container .search-game-wishlist svg {
-  background: transparent;
+.wishlist-section .wishlist-container .chart-container .doughnut-container #chart {
+  height: 10rem;
+  width: 10rem;
 }
 .wishlist-section .games-container {
   display: flex;
@@ -1196,6 +1363,8 @@ body {
 }
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardLeft {
   width: 50%;
+  border-radius: 0.25rem 0 0 0.25rem;
+  overflow: hidden;
 }
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardLeft .gameHorizontalImage {
   width: 100%;
@@ -1208,6 +1377,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 0.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .titleContainer {
   text-align: center;
@@ -1234,8 +1404,9 @@ body {
   background-color: transparent;
   color: rgba(245, 245, 245, 0.6352941176);
   text-decoration: line-through;
-  width: fit-content;
-  padding-left: 1.2rem;
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .priceContainer .finalGamePriceContainer {
   display: flex;
@@ -1288,14 +1459,14 @@ body {
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   gap: 0.5rem;
   background: transparent;
 }
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer button {
   width: 50%;
   height: 2rem;
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
 }
 .wishlist-section .games-container .gameHorizontalCard .horizontalCardRight .infoContainer .buttonsAlertsContainer .buttonsContainer .cartButton {
   border: 1px solid #755FFF;
@@ -1314,6 +1485,7 @@ body {
   background: transparent;
   color: #755FFF;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .game-card {
@@ -1496,19 +1668,19 @@ body {
   color: rgba(245, 245, 245, 0.6352941176);
 }
 .game-card .card-info .game-description-price .game-price-card {
-  padding-inline: 2rem;
+  padding-left: 2rem;
   background: transparent;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   width: 40%;
-  align-items: center;
+  align-items: end;
 }
 .game-card .card-info .game-description-price .game-price-card .price-container {
   display: flex;
   flex-direction: column;
   background: transparent;
-  width: 11rem;
+  width: 16rem;
 }
 .game-card .card-info .game-description-price .game-price-card .price-container .initial-price-container {
   background: transparent;
@@ -1557,7 +1729,7 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   background: transparent;
-  width: 11rem;
+  width: 16rem;
 }
 .game-card .card-info .game-description-price .game-price-card .buttons-container .buy-btn {
   padding: 0.6rem;

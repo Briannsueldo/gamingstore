@@ -7,8 +7,6 @@ import { steamGamesInfo } from './arrays/steamGames.js';
 
 import { wishCounter } from './gameProfile.js';
 
-wishCounter();
-
 
 //
 
@@ -263,10 +261,13 @@ let filterByCategory = function () {
                 let gameCategories = steamGamesInfo[index].categories.map(category => category.toLowerCase());
 
                 if (categoryText === 'all') {
+                    cards.classList.add('fadeOut');
                     cards.style.display = 'flex';
                 } else if (gameCategories.includes(categoryText)) {
+                    cards.classList.add('fadeOut');
                     cards.style.display = 'flex';
                 } else {
+                    cards.classList.add('fadeIn');
                     cards.style.display = 'none';
                 };
             });

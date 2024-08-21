@@ -47,6 +47,12 @@
                     <path fill="currentColor" d="M12 14.708L6.692 9.4l.708-.708l4.6 4.6l4.6-4.6l.708.708z"/>
                 </svg>
             </div>
+            <div class="btn-logout">
+                <span>LOGOUT</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.496 21H6.5c-1.105 0-2-1.151-2-2.571V5.57c0-1.419.895-2.57 2-2.57h7M16 15.5l3.5-3.5L16 8.5m-6.5 3.496h10"/>
+                </svg>
+            </div>
         </div>
     </nav>
     
@@ -73,18 +79,15 @@
                     <img src="" alt="" class="profile-image">
                     <h2 class="profile-nickname"></h2>
                 </div>
-                <div class="input-container">
-                    <input type="text" name="" id="" class="input-wishlist">
-                    <button class="search-game-wishlist">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                        </svg>
-                    </button>
+                <div class="chart-container">
+                    <div class="doughnut-container">
+                        <canvas id="chart"></canvas>
+                    </div>
+                    <h4>Your favourites categories!</h4>
                 </div>
-                
             </div>
             <div class="games-container">
-    
+                
             </div>
         </section>
     </main>
@@ -144,6 +147,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="../scripts/wishlist.js"></script>
 </body>
 </html>

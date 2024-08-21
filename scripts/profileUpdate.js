@@ -33,3 +33,25 @@ function profileUpdate () {
 };
 
 export { profileUpdate };
+
+function logout() {
+    let profileContainer = document.getElementById("profile-container");
+    let logoutButton =  document.querySelector('.btn-logout');
+
+    profileContainer.addEventListener('click', ()=> {
+        if (logoutButton.classList.contains('goDownAnimation')) {
+            logoutButton.classList.remove('goDownAnimation');
+            logoutButton.classList.add('goUpAnimation');
+        } else {
+            logoutButton.classList.remove('goUpAnimation');
+            logoutButton.classList.add('goDownAnimation');
+        }
+    })
+
+    logoutButton.addEventListener('click', ()=> {
+        localStorage.clear();
+        window.location.href = '../index.html'
+    })
+};
+
+logout();

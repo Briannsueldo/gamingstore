@@ -50,7 +50,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            background-color: #3d3d3d;
+            background-color: transparent;
 
             .format-btn-container {
                 display: flex;
@@ -71,6 +71,7 @@
                     transition: 0.2s ease-in-out;
                     background: linear-gradient(to right, #755FFF, #C854FF);
                     filter: opacity(0.8);
+                    cursor: pointer;
 
                     svg {
                         background: transparent;
@@ -92,6 +93,7 @@
                     transition: 0.2s ease-in-out;
                     background: linear-gradient(to right, #755FFF, #C854FF);
                     filter: opacity(0.8);
+                    cursor: pointer;
 
                     svg {
                         background: transparent;
@@ -110,14 +112,16 @@
                 gap: .5rem;
                 padding: .5rem;
                 align-items: start;
-                background-color: #2121215d;
+                background-color: $third-dark;
+                border-radius: 0.25rem;
 
                 .category-selector {
                     list-style: none;
                     width: 100%;
-                    background-color: $main-dark;
+                    background-color: #101010;
                     padding: 0.2rem;
                     transition: 0.2s ease-in-out;
+                    border-radius: 0.25rem;
 
                     a {
                         display: flex;
@@ -136,7 +140,8 @@
                 height: 2.5rem;
                 width: 100%;
                 justify-content: end;
-                background-color: #3d3d3d;
+                background-color: $third-dark;
+                border-radius: 0.25rem;
 
                 #search-game-input {
                     width: 80%;
@@ -160,11 +165,15 @@
                     width: 20%;
                     cursor: pointer;
                     background-color: $second-gray;
-
+                    transition: 0.2s ease-in-out;
 
                     svg {
-                        background-color: $second-gray;
+                        background-color: transparent;
                         fill: $main-white;
+                    }
+
+                    &:hover {
+                        background: linear-gradient(to right, #755FFF, #C854FF);
                     }
                 }
             }
@@ -333,6 +342,8 @@
                                         background: transparent;
                                         color: $main-blue;
                                         font-weight: 500;
+                                        cursor: pointer;
+                                        transition: 0.2s ease-in-out;
                                     }
                                 }
                             }
